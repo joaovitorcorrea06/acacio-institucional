@@ -387,24 +387,59 @@
                 <!-- Seção de Parceiros -->
                 <div class="parceiros-section">
                     <h3 class="parceiros-title">Nossos Parceiros</h3>
-                    <div class="parceiros-grid">
-                        <div class="parceiro-item">
-                            <img src="caminho/para/logo-parceiro1.png" alt="Logo Parceiro 1" class="parceiro-logo">
-                        </div>
-                        <div class="parceiro-item">
-                            <img src="caminho/para/logo-parceiro2.png" alt="Logo Parceiro 2" class="parceiro-logo">
-                        </div>
-                        <div class="parceiro-item">
-                            <img src="caminho/para/logo-parceiro3.png" alt="Logo Parceiro 3" class="parceiro-logo">
-                        </div>
-                        <div class="parceiro-item">
-                            <img src="caminho/para/logo-parceiro4.png" alt="Logo Parceiro 4" class="parceiro-logo">
-                        </div>
-                        <div class="parceiro-item">
-                            <img src="caminho/para/logo-parceiro5.png" alt="Logo Parceiro 5" class="parceiro-logo">
+                    <div class="parceiros-carrossel-container">
+                        <div class="parceiros-carrossel">
+                            <div class="parceiro-item">
+                                <img src="./assets/logo_clientes/1.png" alt="Logo Parceiro 1" class="parceiro-logo">
+                            </div>
+                            <div class="parceiro-item">
+                                <img src="./assets/logo_clientes/2.png" alt="Logo Parceiro 2" class="parceiro-logo">
+                            </div>
+                            <div class="parceiro-item">
+                                <img src="./assets/logo_clientes/3.png" alt="Logo Parceiro 3" class="parceiro-logo">
+                            </div>
+                            <div class="parceiro-item">
+                                <img src="./assets/logo_clientes/4.png" alt="Logo Parceiro 4" class="parceiro-logo">
+                            </div>
+                            <div class="parceiro-item">
+                                <img src="./assets/logo_clientes/5.png" alt="Logo Parceiro 5" class="parceiro-logo">
+                            </div>
+                            <div class="parceiro-item">
+                                <img src="./assets/logo_clientes/6.png" alt="Logo Parceiro 6" class="parceiro-logo">
+                            </div>
+                            <div class="parceiro-item">
+                                <img src="./assets/logo_clientes/7.png" alt="Logo Parceiro 7" class="parceiro-logo">
+                            </div>
+                            <div class="parceiro-item">
+                                <img src="./assets/logo_clientes/8.png" alt="Logo Parceiro 8" class="parceiro-logo">
+                            </div>
+                            <div class="parceiro-item">
+                                <img src="./assets/logo_clientes/9.png" alt="Logo Parceiro 9" class="parceiro-logo">
+                            </div>
+                            <div class="parceiro-item">
+                                <img src="./assets/logo_clientes/10.png" alt="Logo Parceiro 10" class="parceiro-logo">
+                            </div>
+                            <div class="parceiro-item">
+                                <img src="./assets/logo_clientes/11.png" alt="Logo Parceiro 11" class="parceiro-logo">
+                            </div>
+                            <div class="parceiro-item">
+                                <img src="./assets/logo_clientes/12.png" alt="Logo Parceiro 12" class="parceiro-logo">
+                            </div>
+                            <div class="parceiro-item">
+                                <img src="./assets/logo_clientes/13.png" alt="Logo Parceiro 13" class="parceiro-logo">
+                            </div>
+                            <div class="parceiro-item">
+                                <img src="./assets/logo_clientes/14.png" alt="Logo Parceiro 14" class="parceiro-logo">
+                            </div>
                         </div>
                     </div>
+                    <div class="carrossel-controles">
+                        <button class="carrossel-btn prev-btn">‹</button>
+                        <button class="carrossel-btn next-btn">›</button>
+                    </div>
                 </div>
+
+
             </div>
         </section>
 
@@ -524,10 +559,9 @@ document.querySelectorAll('nav a').forEach(anchor => {
             targetElement.scrollIntoView({
                 behavior: 'smooth', // Comportamento suave
                 block: 'start' // Alinha o topo do elemento ao topo da viewport
-            });
         });
     });
-
+});
 
 document.addEventListener("DOMContentLoaded", () => {
     const animatedElements = document.querySelectorAll('.hero, .quem-somos, .servicos-section, .portfolio-section, .depoimentos-section, .contato-section');
@@ -553,6 +587,88 @@ document.addEventListener("DOMContentLoaded", () => {
             observer.observe(element); // Observa cada elemento
         });
     }, 100); // Ajuste o tempo conforme necessário
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const carrossel = document.querySelector('.parceiros-carrossel');
+    const items = document.querySelectorAll('.parceiro-item');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    
+    const itemWidth = items[0].offsetWidth + 32; // width + gap
+    const visibleItems = 6;
+    let currentPosition = 0;
+    let autoScrollInterval;
+    
+    // Duplica os itens para criar um loop infinito
+    items.forEach(item => {
+        const clone = item.cloneNode(true);
+        carrossel.appendChild(clone);
+    });
+    
+    function updateCarrossel() {
+        carrossel.style.transform = `translateX(-${currentPosition * itemWidth}px)`;
+        
+        // Reset para posição inicial quando chegar ao final
+        if (currentPosition >= items.length) {
+            setTimeout(() => {
+                carrossel.style.transition = 'none';
+                currentPosition = 0;
+                carrossel.style.transform = `translateX(0)`;
+                setTimeout(() => {
+                    carrossel.style.transition = 'transform 0.6s ease-in-out';
+                }, 50);
+            }, 600);
+        }
+    }
+    
+    function nextSlide() {
+        currentPosition++;
+        updateCarrossel();
+    }
+    
+    function prevSlide() {
+        if (currentPosition > 0) {
+            currentPosition--;
+            updateCarrossel();
+        }
+    }
+    
+    // Controles
+    nextBtn.addEventListener('click', () => {
+        clearInterval(autoScrollInterval);
+        nextSlide();
+        startAutoScroll();
+    });
+    
+    prevBtn.addEventListener('click', () => {
+        clearInterval(autoScrollInterval);
+        prevSlide();
+        startAutoScroll();
+    });
+    
+    // Auto scroll
+    function startAutoScroll() {
+        autoScrollInterval = setInterval(nextSlide, 1500);
+    }
+    
+    // Inicia o carrossel automático
+    startAutoScroll();
+    
+    // Pausa ao passar o mouse
+    carrossel.addEventListener('mouseenter', () => {
+        clearInterval(autoScrollInterval);
+    });
+    
+    carrossel.addEventListener('mouseleave', () => {
+        startAutoScroll();
+    });
+    
+    // Ajusta para diferentes tamanhos de tela
+    window.addEventListener('resize', () => {
+        itemWidth = items[0].offsetWidth + 32;
+        updateCarrossel();
+    });
 });
 </script>
 </html> 

@@ -24,14 +24,6 @@
   margin-bottom: 1.5rem;
 }
 
-.divider {
-  width: 80px;
-  height: 4px;
-  background: var(--primary-color);
-  margin: 0 auto 1.5rem;
-  border-radius: 2px;
-}
-
 .section-intro {
   font-size: 1.2rem;
   line-height: 1.8;
