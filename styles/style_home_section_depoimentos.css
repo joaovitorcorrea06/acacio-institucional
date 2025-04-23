@@ -1,0 +1,257 @@
+.depoimentos-section {
+  padding: 6rem 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  position: relative;
+}
+
+.depoimentos-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.header-section {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-size: 2.8rem;
+  color: var(--primary-color);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.divider {
+  width: 80px;
+  height: 4px;
+  background: var(--primary-color);
+  margin: 0 auto 1.5rem;
+  border-radius: 2px;
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.depoimentos-container {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 2rem;
+  margin-bottom: 3rem;
+  scrollbar-width: none; /* Firefox */
+}
+
+.depoimentos-container::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+.depoimento-card {
+  min-width: 350px;
+  scroll-snap-align: start;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.depoimento-card:hover {
+  transform: translateY(-5px);
+}
+
+.depoimento-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.quote-icon {
+  font-size: 4rem;
+  color: var(--primary-color);
+  line-height: 1;
+  opacity: 0.2;
+  margin-bottom: -1.5rem;
+}
+
+.depoimento-text {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 2rem;
+  flex-grow: 1;
+}
+
+.depoimento-author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.author-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--primary-color);
+}
+
+.author-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.author-info h4 {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 0.2rem;
+}
+
+.author-info p {
+  font-size: 0.9rem;
+  color: #777;
+  font-style: italic;
+}
+
+/* Carrossel Controls */
+.carrossel-controles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 4rem;
+}
+
+.carrossel-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.carrossel-btn:hover {
+  background: #0056b3;
+  transform: scale(1.1);
+}
+
+.carrossel-indicadores {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.carrossel-indicadores span {
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ccc;
+  cursor: pointer;
+}
+
+.carrossel-indicadores span.active {
+  background: var(--primary-color);
+}
+
+/* Parceiros Section */
+.parceiros-section {
+  margin-top: 4rem;
+}
+
+.parceiros-title {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0 2rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.parceiros-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 2rem;
+  align-items: center;
+  justify-items: center;
+}
+
+.parceiro-item {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+}
+
+.parceiro-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.parceiro-logo {
+  max-width: 100%;
+  max-height: 70px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.parceiro-item:hover .parceiro-logo {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+  .depoimento-card {
+      min-width: 300px;
+  }
+  
+  .parceiros-grid {
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .section-title {
+      font-size: 2.2rem;
+  }
+  
+  .depoimentos-container {
+      gap: 1rem;
+  }
+  
+  .depoimento-card {
+      min-width: 280px;
+      padding: 1.5rem;
+  }
+  
+  .parceiro-item {
+      padding: 1rem;
+      height: 80px;
+  }
+}

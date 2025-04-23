@@ -1,0 +1,113 @@
+/* Estilos para a seção Quem Somos */
+.quem-somos {
+  padding: 6rem 0;
+  background-color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+.quem-somos .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.header-section {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  font-size: 2.8rem;
+  color: var(--primary-color);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.divider {
+  width: 80px;
+  height: 4px;
+  background: var(--primary-color);
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.text-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.lead-text {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  color: var(--dark-gray);
+  font-weight: 500;
+}
+
+.diferenciais-box {
+  background: linear-gradient(135deg, rgba(240, 240, 240, 0.8) 0%, rgba(255, 255, 255, 0.9) 100%);
+  border-radius: 12px;
+  padding: 2rem;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.diferenciais-title {
+  font-size: 1.6rem;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.diferenciais-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.diferencial-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.diferencial-icon {
+  background-color: var(--primary-color);
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  flex-shrink: 0;
+  font-size: 0.9rem;
+}
+
+.diferencial-text {
+  font-size: 1.1rem;
+  color: var(--dark-gray);
+  line-height: 1.5;
+}
+
+.featured-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+  max-height: 500px;
+}

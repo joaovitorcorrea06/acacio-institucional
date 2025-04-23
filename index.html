@@ -3,81 +3,487 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MetalTech Solutions - Excelência em Metalurgia</title>
+    <title>Acácio - Excelência em Metalurgia</title>
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/style_animations.css">
+    <link rel="stylesheet" href="styles/style_buttons.css">
+    <link rel="stylesheet" href="styles/style_home_section_hero_top.css">
+    <link rel="stylesheet" href="styles/style_home_section_quem_somos.css">
+    <link rel="stylesheet" href="styles/style_home_section_o_que_fazemos.css">
+    <link rel="stylesheet" href="styles/style_home_section_portfolio.css">
+    <link rel="stylesheet" href="styles/style_home_section_depoimentos.css">
+    <link rel="stylesheet" href="styles/style_home_section_contato.css">
+
+    <script src="./actions/depoimentos.js"></script>
+
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body>
     <header>
         <div class="header-container">
             <div class="logo">
-                <img src="images/logo.png" alt="MetalTech Solutions Logo">
+                <img src="assets/logo.png" alt="Acácio ">
             </div>
             <nav>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="sobre.html">Sobre</a></li>
-                    <li><a href="produtos.html">Produtos</a></li>
-                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#quem_somos">Sobre</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#projetos">Projetos</a></li>
+                    <li><a href="#depoimentos">Depoimentos</a></li>
+                    <li><a href="#contato">Contato</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <main>
-        <section class="hero">
+        <section class="hero" id="home">
             <div class="hero-content">
-                <h1>Inovação em Metalurgia</h1>
-                <p>Soluções precisas em usinagem e fabricação de peças metálicas há mais de 25 anos</p>
+                <h1>Transformamos o aço em arte</h1>
+                <p>Há mais de 30 anos, a ACÁCIO realiza projetos em aço inox com excelência, design e durabilidade, marcando presença nas principal obras do Brasil</p>
                 <a href="produtos.html" class="btn btn-primary">Conheça Nossos Produtos</a>
             </div>
         </section>
 
-        <section class="destaques">
-            <h2>Produtos em Destaque</h2>
-            <div class="cards">
-                <div class="card">
-                    <img src="images/engrenagens.jpg" alt="Engrenagens Industriais">
-                    <h3>Engrenagens Industriais</h3>
-                    <p>Engrenagens de precisão para diversos setores industriais</p>
-                    <a href="produto-detalhe.html?id=1" class="btn">Ver Detalhes</a>
+        <section class="quem-somos" id="quem_somos">
+            <div class="container">
+                <div class="header-section">
+                    <h2 class="section-title">Quem Somos</h2>
+                    <div class="divider"></div>
                 </div>
-                <div class="card">
-                    <img src="images/eixos.jpg" alt="Eixos e Hastes">
-                    <h3>Eixos e Hastes</h3>
-                    <p>Eixos usinados com alta precisão e resistência</p>
-                    <a href="produto-detalhe.html?id=2" class="btn">Ver Detalhes</a>
-                </div>
-                <div class="card">
-                    <img src="images/pecas.jpg" alt="Peças Especiais">
-                    <h3>Peças Especiais</h3>
-                    <p>Fabricação sob medida para sua necessidade</p>
-                    <a href="produto-detalhe.html?id=3" class="btn">Ver Detalhes</a>
+                
+                <div class="content-grid">
+                    <div class="text-content">
+                        <p class="lead-text">A Acácio Metalúrgica, fundada em 1992 por Audi Antônio de Souza, atual Diretor, consolida-se como referência em soluções em aço inox sob medida, combinando tradição e inovação em um parque industrial de 4.000m².</p>
+                        
+                        <p>Com sede em Florianópolis e atuação nacional, nossos produtos representam a excelência em acabamento, funcionalidade e durabilidade, resultado de investimento contínuo em tecnologia e capacitação de nossa equipe especializada.</p>
+                        
+                        <div class="diferenciais-box">
+                            <h3 class="diferenciais-title">Nossos Diferenciais Competitivos</h3>
+                            <div class="diferenciais-grid">
+                                <div class="diferencial-item">
+                                    <div class="diferencial-icon">✓</div>
+                                    <div class="diferencial-text">+30 anos de expertise no mercado</div>
+                                </div>
+                                <div class="diferencial-item">
+                                    <div class="diferencial-icon">✓</div>
+                                    <div class="diferencial-text">Soluções personalizadas</div>
+                                </div>
+                                <div class="diferencial-item">
+                                    <div class="diferencial-icon">✓</div>
+                                    <div class="diferencial-text">Equipe técnica altamente qualificada</div>
+                                </div>
+                                <div class="diferencial-item">
+                                    <div class="diferencial-icon">✓</div>
+                                    <div class="diferencial-text">Compromisso com excelência operacional</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="image-content">
+                        <!-- Substitua pelo caminho real da imagem -->
+                        <img src="caminho/para/imagem-metalurgica.jpg" alt="Fábrica da Acácio Metalúrgica" class="featured-image">
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="diferenciais">
-            <h2>Por que escolher a MetalTech?</h2>
-            <div class="diferenciais-grid">
-                <div class="diferencial">
-                    <img src="images/qualidade.svg" alt="Qualidade">
-                    <h3>Qualidade Certificada</h3>
-                    <p>ISO 9001 e certificações específicas do setor</p>
+        <section class="servicos-section" id="servicos">
+            <div class="container">
+                <div class="header-section">
+                    <h2 class="section-title">O Que Fazemos</h2>
+                    <div class="divider"></div>
+                    <p class="section-intro">Na Acácio Metalúrgica, oferecemos soluções completas e personalizadas em aço inox, unindo tecnologia, experiência e precisão em cada projeto. Atuamos em diversas frentes, sempre com foco na qualidade, funcionalidade e durabilidade dos produtos.</p>
                 </div>
-                <div class="diferencial">
-                    <img src="images/tecnologia.svg" alt="Tecnologia">
-                    <h3>Tecnologia Avançada</h3>
-                    <p>Equipamentos CNC de última geração</p>
-                </div>
-                <div class="diferencial">
-                    <img src="images/entrega.svg" alt="Entrega">
-                    <h3>Entrega Pontual</h3>
-                    <p>Compromisso com prazos e logística eficiente</p>
+        
+                <div class="servicos-grid">
+                    <!-- Card Exaustão -->
+                    <div class="servico-card">
+                        <div class="card-icon">
+                            <i class="icon-ventilacao"></i>
+                        </div>
+                        <h3 class="card-title">Sistemas de Exaustão</h3>
+                        <p class="card-description">Projetamos e fabricamos sistemas de exaustão personalizados, atendendo rigorosamente à NBR 14.518 e às necessidades específicas de cada cliente.</p>
+                        <div class="card-destaque">
+                            <span>Foco em:</span> Eficiência • Durabilidade • Segurança
+                        </div>
+                        <ul class="card-produtos">
+                            <li>Coifa Convencional</li>
+                            <li>Coifa Lavadora</li>
+                            <li>Lavador de gases</li>
+                            <li>Dutos e ventiladores</li>
+                        </ul>
+                    </div>
+        
+                    <!-- Card Hotelaria -->
+                    <div class="servico-card">
+                        <div class="card-icon">
+                            <i class="icon-restaurante"></i>
+                        </div>
+                        <h3 class="card-title">Restaurantes & Hotelaria</h3>
+                        <p class="card-description">Combinamos design funcional, resistência e alto padrão de acabamento para equipamentos que proporcionam praticidade e durabilidade.</p>
+                        <div class="card-destaque">
+                            <span>Soluções para:</span>
+                        </div>
+                        <ul class="card-produtos">
+                            <li>Mobiliário (mesas, pias, estantes)</li>
+                            <li>Balcão refrigerado e buffet</li>
+                            <li>Equipamentos de cocção</li>
+                            <li>Sistemas de exaustão</li>
+                        </ul>
+                    </div>
+        
+                    <!-- Card Supermercados -->
+                    <div class="servico-card">
+                        <div class="card-icon">
+                            <i class="icon-supermercado"></i>
+                        </div>
+                        <h3 class="card-title">Supermercados</h3>
+                        <p class="card-description">Equipamentos sob medida em aço inox que respeitam as normas sanitárias e operacionais exigidas pelo setor.</p>
+                        <div class="card-destaque">
+                            <span>Atendemos:</span>
+                        </div>
+                        <ul class="card-produtos">
+                            <li>Açougue e padaria</li>
+                            <li>Refeitórios e quiosques</li>
+                            <li>Proteções (bate-carrinho)</li>
+                            <li>Corrimãos e guarda-corpos</li>
+                        </ul>
+                    </div>
+        
+                    <!-- Card Hospitalar -->
+                    <div class="servico-card">
+                        <div class="card-icon">
+                            <i class="icon-hospital"></i>
+                        </div>
+                        <h3 class="card-title">Soluções Hospitalares</h3>
+                        <p class="card-description">Atendemos com rigor os mais altos padrões de higiene e segurança exigidos pelo setor da saúde.</p>
+                        <div class="card-destaque">
+                            <span>Produtos:</span>
+                        </div>
+                        <ul class="card-produtos">
+                            <li>Bancadas e mesas</li>
+                            <li>Pias e tanques de esterilização</li>
+                            <li>Sistemas de armazenamento</li>
+                            <li>Lixeiras e espurgos</li>
+                        </ul>
+                    </div>
+        
+                    <!-- Card Construção Civil -->
+                    <div class="servico-card">
+                        <div class="card-icon">
+                            <i class="icon-construcao"></i>
+                        </div>
+                        <h3 class="card-title">Construção Civil</h3>
+                        <p class="card-description">Soluções inovadoras em aço inox e ferro para projetos comerciais e residenciais.</p>
+                        <div class="card-destaque">
+                            <span>Portfólio inclui:</span>
+                        </div>
+                        <ul class="card-produtos">
+                            <li>Fachadas com vidro</li>
+                            <li>Corrimãos e guarda-corpos</li>
+                            <li>Espaços gourmet completos</li>
+                            <li>Grelhas e tampas de ferro</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
-    </main>
+
+        <section class="portfolio-section" id="projetos">
+            <div class="container">
+                <div class="header-section">
+                    <h2 class="section-title">Projetos que Falam por Si</h2>
+                    <div class="divider"></div>
+                    <p class="section-subtitle">Cada obra é única e feita para durar. Veja alguns de nossos projetos de destaque em todo o Brasil.</p>
+                </div>
+        
+                <div class="portfolio-filter">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="exaustao">Exaustão</button>
+                    <button class="filter-btn" data-filter="hospitalar">Hospitalar</button>
+                    <button class="filter-btn" data-filter="restaurantes">Restaurantes</button>
+                    <button class="filter-btn" data-filter="supermercados">Supermercados</button>
+                    <button class="filter-btn" data-filter="construcao">Construção Civil</button>
+                </div>
+        
+                <div class="portfolio-grid">
+                    <!-- Item 1 -->
+                    <div class="portfolio-item" data-category="exaustao">
+                        <div class="portfolio-img-container">
+                            <img src="caminho/para/projeto-exaustao-1.jpg" alt="Sistema de exaustão industrial" class="portfolio-img">
+                            <div class="portfolio-overlay">
+                                <div class="overlay-content">
+                                    <h3>Sistema de Exaustão Industrial</h3>
+                                    <p>Fábrica em São Paulo - 2023</p>
+                                    <button class="view-btn">Ampliar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Item 2 -->
+                    <div class="portfolio-item" data-category="restaurantes">
+                        <div class="portfolio-img-container">
+                            <img src="caminho/para/cozinha-restaurante.jpg" alt="Cozinha industrial para restaurante" class="portfolio-img">
+                            <div class="portfolio-overlay">
+                                <div class="overlay-content">
+                                    <h3>Cozinha Industrial Completa</h3>
+                                    <p>Restaurante em Florianópolis - 2022</p>
+                                    <button class="view-btn">Ampliar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Item 3 -->
+                    <div class="portfolio-item" data-category="hospitalar">
+                        <div class="portfolio-img-container">
+                            <img src="caminho/para/equipamento-hospitalar.jpg" alt="Equipamentos hospitalares em aço inox" class="portfolio-img">
+                            <div class="portfolio-overlay">
+                                <div class="overlay-content">
+                                    <h3>Bancadas Hospitalares</h3>
+                                    <p>Hospital em Curitiba - 2023</p>
+                                    <button class="view-btn">Ampliar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Item 4 -->
+                    <div class="portfolio-item" data-category="supermercados">
+                        <div class="portfolio-img-container">
+                            <img src="caminho/para/acougue-supermercado.jpg" alt="Balcões para açougue" class="portfolio-img">
+                            <div class="portfolio-overlay">
+                                <div class="overlay-content">
+                                    <h3>Balcões Refrigerados</h3>
+                                    <p>Supermercado em Belo Horizonte - 2022</p>
+                                    <button class="view-btn">Ampliar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Item 5 -->
+                    <div class="portfolio-item" data-category="construcao">
+                        <div class="portfolio-img-container">
+                            <img src="caminho/para/guarda-corpo.jpg" alt="Guarda-corpo em aço inox" class="portfolio-img">
+                            <div class="portfolio-overlay">
+                                <div class="overlay-content">
+                                    <h3>Guarda-Corpo Arquitetônico</h3>
+                                    <p>Edifício Residencial - Porto Alegre - 2023</p>
+                                    <button class="view-btn">Ampliar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Item 6 -->
+                    <div class="portfolio-item" data-category="exaustao">
+                        <div class="portfolio-img-container">
+                            <img src="caminho/para/coifa-lavadora.jpg" alt="Coifa lavadora industrial" class="portfolio-img">
+                            <div class="portfolio-overlay">
+                                <div class="overlay-content">
+                                    <h3>Coifa Lavadora Industrial</h3>
+                                    <p>Indústria Alimentícia - Joinville - 2023</p>
+                                    <button class="view-btn">Ampliar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="portfolio-cta">
+                    <p>Todos os nossos projetos são desenvolvidos sob medida para atender às necessidades específicas de cada cliente.</p>
+                    <a href="#contato" class="cta-btn">Quero um projeto como esses</a>
+                </div>
+            </div>
+        
+            <!-- Modal -->
+            <div class="portfolio-modal">
+                <div class="modal-content">
+                    <span class="close-modal">&times;</span>
+                    <img src="" alt="" class="modal-img">
+                    <div class="modal-info">
+                        <h3 class="modal-title"></h3>
+                        <p class="modal-description"></p>
+                        <p class="modal-location"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="depoimentos-section" id="depoimentos">
+            <div class="container">
+                <div class="header-section">
+                    <h2 class="section-title">Quem Confia, Recomenda</h2>
+                    <div class="divider"></div>
+                    <p class="section-subtitle">A satisfação dos nossos clientes e parceiros é o nosso maior orgulho</p>
+                </div>
+        
+                <div class="depoimentos-container">
+                    <!-- Depoimento 1 -->
+                    <div class="depoimento-card">
+                        <div class="depoimento-content">
+                            <div class="quote-icon">“</div>
+                            <p class="depoimento-text">Acácio Metalúrgica é a empresa mais séria que já recebi atendimento, eles dominam no quesito inox e cozinha industrial. Senhor Audi e seu filho Audi Junior são extremamente profissionais, dominam a arte de tornar realidade as necessidades dos clientes.</p>
+                            <div class="depoimento-author">
+                                <div class="author-avatar">
+                                    <img src="caminho/para/avatar1.jpg" alt="Cliente Acácio Metalúrgica">
+                                </div>
+                                <div class="author-info">
+                                    <h4>Roberto Silva</h4>
+                                    <p>Restaurante Maré Alta</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Depoimento 2 -->
+                    <div class="depoimento-card">
+                        <div class="depoimento-content">
+                            <div class="quote-icon">“</div>
+                            <p class="depoimento-text">Ótima experiência, antes de realizar a venda me passaram bastante conhecimento dos equipamentos e soluções. O acabamento dos produtos superou nossas expectativas.</p>
+                            <div class="depoimento-author">
+                                <div class="author-avatar">
+                                    <img src="caminho/para/avatar2.jpg" alt="Cliente Acácio Metalúrgica">
+                                </div>
+                                <div class="author-info">
+                                    <h4>Fernanda Oliveira</h4>
+                                    <p>Hospital Santa Clara</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Depoimento 3 -->
+                    <div class="depoimento-card">
+                        <div class="depoimento-content">
+                            <div class="quote-icon">“</div>
+                            <p class="depoimento-text">Eu como empresário e consumidor, a Acácio para nós se tornou indispensável, a espessura do aço é uma das melhores em resistência, é uma das únicas empresas que trabalham em rolo e garantem entrega.</p>
+                            <div class="depoimento-author">
+                                <div class="author-avatar">
+                                    <img src="caminho/para/avatar3.jpg" alt="Cliente Acácio Metalúrgica">
+                                </div>
+                                <div class="author-info">
+                                    <h4>Carlos Mendonça</h4>
+                                    <p>Supermercados Preço Bom</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Controles do carrossel (opcional) -->
+                <div class="carrossel-controles">
+                    <button class="carrossel-btn prev-btn">‹</button>
+                    <div class="carrossel-indicadores"></div>
+                    <button class="carrossel-btn next-btn">›</button>
+                </div>
+        
+                <!-- Seção de Parceiros -->
+                <div class="parceiros-section">
+                    <h3 class="parceiros-title">Nossos Parceiros</h3>
+                    <div class="parceiros-grid">
+                        <div class="parceiro-item">
+                            <img src="caminho/para/logo-parceiro1.png" alt="Logo Parceiro 1" class="parceiro-logo">
+                        </div>
+                        <div class="parceiro-item">
+                            <img src="caminho/para/logo-parceiro2.png" alt="Logo Parceiro 2" class="parceiro-logo">
+                        </div>
+                        <div class="parceiro-item">
+                            <img src="caminho/para/logo-parceiro3.png" alt="Logo Parceiro 3" class="parceiro-logo">
+                        </div>
+                        <div class="parceiro-item">
+                            <img src="caminho/para/logo-parceiro4.png" alt="Logo Parceiro 4" class="parceiro-logo">
+                        </div>
+                        <div class="parceiro-item">
+                            <img src="caminho/para/logo-parceiro5.png" alt="Logo Parceiro 5" class="parceiro-logo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contato-section " id="contato">
+            <div class="container">
+                <div class="contato-grid">
+                    <div class="contato-info">
+                        <div class="header-section">
+                            <h2 class="section-title">Seu projeto merece a excelência de mais de 30 anos no mercado!</h2>
+                            <div class="divider"></div>
+                        </div>
+        
+                        <div class="contato-dados">
+                            <div class="contato-item">
+                                <div class="contato-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contato-text">
+                                    <h3>E-mail</h3>
+                                    <a href="mailto:contato@acacio.com.br">contato@acacio.com.br</a>
+                                </div>
+                            </div>
+        
+                            <div class="contato-item">
+                                <div class="contato-icon">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div class="contato-text">
+                                    <h3>Telefone</h3>
+                                    <a href="tel:+5548996890061">(48) 9 9689-0061</a>
+                                </div>
+                            </div>
+        
+                            <div class="contato-item">
+                                <div class="contato-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="contato-text">
+                                    <h3>Endereço</h3>
+                                    <address>R. Edelberto de Oliveira, 1004 - Monte Cristo, Florianópolis/SC</address>
+                                </div>
+                            </div>
+        
+                            <div class="contato-redes">
+                                <h3>Siga-nos</h3>
+                                <div class="redes-sociais">
+                                    <a href="https://www.instagram.com/acaciometalurgica" target="_blank" class="rede-social">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                    <a href="https://www.facebook.com/acaciometalurgica" target="_blank" class="rede-social">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                    <a href="https://wa.me/5548996890061" target="_blank" class="rede-social">
+                                        <i class="fab fa-whatsapp"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="contato-mapa">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3535.992919041022!2d-48.5465883!3d-27.5926907!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9527383a7c5d5a25%3A0x3a8e8d9e3a8e8d9e!2sR.%20Edelberto%20de%20Oliveira%2C%201004%20-%20Monte%20Cristo%2C%20Florian%C3%B3polis%20-%20SC%2C%2088050-005!5e0!3m2!1spt-BR!2sbr!4v1620000000000!5m2!1spt-BR!2sbr" 
+                                width="100%" 
+                                height="100%" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy"
+                                title="Localização da Acácio Metalúrgica">
+                        </iframe>
+                    </div>
+                </div>
+        
+                <div class="contato-cta">
+                    <a href="https://wa.me/5548996890061" class="cta-button">
+                        <i class="fab fa-whatsapp"></i> Entre em contato via WhatsApp
+                    </a>
+                </div>
+            </div>
+        </section>
 
     <footer>
         <div class="footer-content">
@@ -106,4 +512,47 @@
         </div>
     </footer>
 </body>
+<script>
+document.querySelectorAll('nav a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault(); // Previne o comportamento padrão do link
+
+            const targetId = this.getAttribute('href'); // Obtém o ID do alvo
+            const targetElement = document.querySelector(targetId); // Seleciona o elemento alvo
+
+            // Rolagem suave para o elemento alvo
+            targetElement.scrollIntoView({
+                behavior: 'smooth', // Comportamento suave
+                block: 'start' // Alinha o topo do elemento ao topo da viewport
+            });
+        });
+    });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const animatedElements = document.querySelectorAll('.hero, .quem-somos, .servicos-section, .portfolio-section, .depoimentos-section, .contato-section');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Alterna entre animações à esquerda e à direita
+                const index = Array.from(animatedElements).indexOf(entry.target);
+                if (index % 2 === 0) {
+                    entry.target.classList.add('animate-left'); // Adiciona a animação da esquerda
+                } else {
+                    entry.target.classList.add('animate-right'); // Adiciona a animação da direita
+                }
+                observer.unobserve(entry.target); // Para observar o elemento após a animação
+            }
+        });
+    });
+
+    // Adiciona um pequeno atraso antes de começar a observar
+    setTimeout(() => {
+        animatedElements.forEach(element => {
+            observer.observe(element); // Observa cada elemento
+        });
+    }, 100); // Ajuste o tempo conforme necessário
+});
+</script>
 </html> 

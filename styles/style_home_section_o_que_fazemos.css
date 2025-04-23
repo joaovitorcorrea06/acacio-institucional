@@ -1,0 +1,149 @@
+/* serviços */
+
+.servicos-section {
+  padding: 6rem 0;
+  background-color: #f9f9f9;
+  position: relative;
+}
+
+.servicos-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.header-section {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-size: 2.8rem;
+  color: var(--primary-color);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.divider {
+  width: 80px;
+  height: 4px;
+  background: var(--primary-color);
+  margin: 0 auto 1.5rem;
+  border-radius: 2px;
+}
+
+.section-intro {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.servicos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.servico-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-top: 4px solid var(--primary-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.servico-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card-icon {
+  width: 60px;
+  height: 60px;
+  background-color: rgba(0, 110, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+  font-size: 1.8rem;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.card-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.card-destaque {
+  font-size: 0.9rem;
+  background-color: rgba(0, 110, 255, 0.05);
+  padding: 0.8rem;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+.card-destaque span {
+  font-weight: 700;
+}
+
+.card-produtos {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1rem;
+}
+
+.card-produtos li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.6rem;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.card-produtos li:before {
+  content: "•";
+  color: var(--primary-color);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+/* Ícones (substitua por ícones reais ou uma biblioteca como Font Awesome) */
+.icon-ventilacao:before { content: "💨"; }
+.icon-restaurante:before { content: "🍽️"; }
+.icon-supermercado:before { content: "🛒"; }
+.icon-hospital:before { content: "🏥"; }
+.icon-construcao:before { content: "🏗️"; }
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .section-title {
+      font-size: 2.2rem;
+  }
+  
+  .servicos-grid {
+      grid-template-columns: 1fr;
+  }
+  
+  .servico-card {
+      padding: 1.5rem;
+  }
+}
