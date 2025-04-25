@@ -1,3 +1,4 @@
+/* === SEÇÃO DE DEPOIMENTOS === */
 .depoimentos-section {
   padding: 6rem 0;
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
@@ -30,32 +31,25 @@
   line-height: 1.6;
 }
 
+/* Carrossel de depoimentos */
 .depoimentos-container {
   display: flex;
   gap: 2rem;
-  overflow-x: auto;
+  overflow: hidden;
   scroll-snap-type: x mandatory;
   padding-bottom: 2rem;
   margin-bottom: 3rem;
-  scrollbar-width: none; /* Firefox */
-}
-
-.depoimentos-container::-webkit-scrollbar {
-  display: none; /* Chrome/Safari */
+  position: relative;
 }
 
 .depoimento-card {
-  min-width: 350px;
+  flex: 0 0 100%;
   scroll-snap-align: start;
   background: white;
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   padding: 2rem;
   transition: transform 0.3s ease;
-}
-
-.depoimento-card:hover {
-  transform: translateY(-5px);
 }
 
 .depoimento-content {
@@ -112,54 +106,7 @@
   font-style: italic;
 }
 
-/* Carrossel Controls */
-.carrossel-controles {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 4rem;
-}
-
-.carrossel-btn {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: var(--primary-color);
-  color: white;
-  border: none;
-  font-size: 1.2rem;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-}
-
-.carrossel-btn:hover {
-  background: #0056b3;
-  transform: scale(1.1);
-}
-
-.carrossel-indicadores {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.carrossel-indicadores span {
-  display: block;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: #ccc;
-  cursor: pointer;
-}
-
-.carrossel-indicadores span.active {
-  background: var(--primary-color);
-}
-
-/* Seção de Parceiros - Carrossel Automático */
+/* === SEÇÃO DE PARCEIROS === */
 .parceiros-section {
   padding: 4rem 0;
   position: relative;
@@ -194,14 +141,14 @@
 
 .parceiros-carrossel {
   display: flex;
+  gap: 2rem;
   transition: transform 0.6s ease-in-out;
   will-change: transform;
-  gap: 2rem;
   padding: 0 2rem;
 }
 
 .parceiro-item {
-  flex: 0 0 calc(16.666% - 1.67rem); /* 6 itens por view */
+  flex: 0 0 calc(16.666% - 1.67rem);
   min-width: 150px;
   height: 100px;
   display: flex;
@@ -221,7 +168,6 @@
 
 .parceiro-logo {
   max-width: 130%;
-  /* max-height: 70px; */
   width: auto;
   height: auto;
   object-fit: contain;
@@ -235,28 +181,14 @@
   opacity: 1;
 }
 
-/* Controles do Carrossel */
-.parceiros-carrossel-controles {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 1.5rem;
-}
-
-/* Responsividade */
-@media (max-width: 1200px) {
-  .parceiro-item {
-    flex: 0 0 calc(20% - 1.6rem); /* 5 itens */
-  }
-}
-
+/* === RESPONSIVIDADE === */
 @media (max-width: 992px) {
   .depoimento-card {
-    min-width: 300px;
+    padding: 1.5rem;
   }
-  
+
   .parceiro-item {
-    flex: 0 0 calc(25% - 1.5rem); /* 4 itens */
+    flex: 0 0 calc(25% - 1.5rem);
   }
 }
 
@@ -264,32 +196,51 @@
   .section-title {
     font-size: 2.2rem;
   }
-  
-  .depoimentos-container {
-    gap: 1rem;
-  }
-  
+
   .depoimento-card {
-    min-width: 280px;
-    padding: 1.5rem;
+    flex: 0 0 100%;
   }
-  
+
   .parceiro-item {
-    flex: 0 0 calc(33.333% - 1.33rem); /* 3 itens */
-  }
-  
-  .parceiros-title {
-    font-size: 1.5rem;
+    flex: 0 0 calc(33.333% - 1rem);
   }
 }
 
 @media (max-width: 576px) {
   .parceiro-item {
-    flex: 0 0 calc(50% - 1rem); /* 2 itens */
+    flex: 0 0 calc(50% - 1rem);
   }
-  
+
   .parceiros-carrossel {
     gap: 1rem;
     padding: 0 1rem;
+  }
+}
+
+.depoimentos-wrapper {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.depoimentos-track {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+  will-change: transform;
+}
+
+.depoimento-card {
+  box-sizing: border-box;
+  padding: 2rem;
+  margin: 0 1rem;
+  flex: 0 0 calc(100% - 2rem); /* 2rem = margem lateral total */
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+@media (min-width: 992px) {
+  .depoimento-card {
+    flex: 0 0 calc(50% - 2rem); /* 2rem = margem lateral total */
   }
 }

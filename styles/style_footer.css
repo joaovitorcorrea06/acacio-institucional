@@ -1,0 +1,115 @@
+/* Footer Minimalista */
+footer {
+  background: var(--dark-gray);
+  color: var(--white);
+  padding: 3rem 2rem 1.5rem;
+  position: relative;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.footer-main {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 1.2rem;
+  order: 1;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: var(--white);
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  background-color: var(--primary-color);
+  transform: translateY(-3px);
+}
+
+.footer-logo {
+  order: 2;
+}
+
+.footer-logo img {
+  height: 50px;
+  filter: brightness(0) invert(1);
+  transition: opacity 0.3s ease;
+}
+
+.footer-logo img:hover {
+  opacity: 0.8;
+}
+
+.footer-bottom {
+  text-align: center;
+  width: 100%;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.9rem;
+  color: #aaaaaa;
+}
+
+.footer-bottom p {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.footer-bottom a {
+  color: #aaaaaa;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-bottom a:hover {
+  color: var(--primary-color);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  footer {
+    padding: 2rem 1.5rem 1rem;
+  }
+  
+  .footer-main {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .social-links {
+    order: 2;
+  }
+  
+  .footer-logo {
+    order: 1;
+  }
+  
+  .footer-bottom p {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

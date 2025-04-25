@@ -108,10 +108,13 @@
 }
 
 .contato-mapa {
-  height: 400px;
+  /* height: 400px; */
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .contato-mapa iframe {
@@ -180,5 +183,19 @@
   .cta-button {
       padding: 0.8rem 1.5rem;
       font-size: 1rem;
+  }
+  .contato-dados{
+   align-items: center; 
+   justify-content: center;
+  }
+  .contato-item{
+   align-items: center; 
+   justify-content: center;
+  }
+  .contato-text{
+    display: flex;
+    flex-direction: column;
+   align-items: center; 
+   justify-content: center;
   }
 }

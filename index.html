@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/style_animations.css">
     <link rel="stylesheet" href="styles/style_buttons.css">
+    <link rel="stylesheet" href="styles/style_footer.css">
     <link rel="stylesheet" href="styles/style_home_section_hero_top.css">
     <link rel="stylesheet" href="styles/style_home_section_quem_somos.css">
     <link rel="stylesheet" href="styles/style_home_section_o_que_fazemos.css">
@@ -27,8 +28,11 @@
                 <img src="assets/logo.png" alt="Acácio ">
             </div>
             <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
+                <div class="menu-toggle" id="mobile-menu">
+                    <i class="fas fa-bars"></i> <!-- Ícone de menu -->
+                </div>
+                <ul class="nav-list">
+                    <!-- <li><a href="#home">Home</a></li> -->
                     <li><a href="#quem_somos">Sobre</a></li>
                     <li><a href="#servicos">Serviços</a></li>
                     <li><a href="#projetos">Projetos</a></li>
@@ -38,8 +42,22 @@
             </nav>
         </div>
     </header>
+    
+    <!-- Menu de navegação sobreposto -->
+    <div class="overlay-menu" id="overlay-menu">
+        <div class="close-menu" id="close-menu">&times;</div>
+        <ul class="nav-list-mobile">
+            <!-- <li><a href="#home">Home</a></li> -->
+            <li><a href="#quem_somos">Sobre</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#depoimentos">Depoimentos</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </div>
 
     <main>
+
         <section class="hero" id="home">
             <div class="hero-content">
                 <h1>Transformamos o aço em arte</h1>
@@ -84,8 +102,7 @@
                         </div>
                     </div>
                     <div class="image-content">
-                        <!-- Substitua pelo caminho real da imagem -->
-                        <img src="caminho/para/imagem-metalurgica.jpg" alt="Fábrica da Acácio Metalúrgica" class="featured-image">
+                        <img src="assets/[ACACIO]-estrutura.png" alt="Fábrica da Acácio Metalúrgica" class="featured-image">
                     </div>
                 </div>
             </div>
@@ -201,25 +218,24 @@
                     <p class="section-subtitle">Cada obra é única e feita para durar. Veja alguns de nossos projetos de destaque em todo o Brasil.</p>
                 </div>
         
-                <div class="portfolio-filter">
+                <!-- <div class="portfolio-filter">
                     <button class="filter-btn active" data-filter="all">Todos</button>
                     <button class="filter-btn" data-filter="exaustao">Exaustão</button>
                     <button class="filter-btn" data-filter="hospitalar">Hospitalar</button>
                     <button class="filter-btn" data-filter="restaurantes">Restaurantes</button>
                     <button class="filter-btn" data-filter="supermercados">Supermercados</button>
                     <button class="filter-btn" data-filter="construcao">Construção Civil</button>
-                </div>
+                </div> -->
         
                 <div class="portfolio-grid">
                     <!-- Item 1 -->
                     <div class="portfolio-item" data-category="exaustao">
                         <div class="portfolio-img-container">
-                            <img src="caminho/para/projeto-exaustao-1.jpg" alt="Sistema de exaustão industrial" class="portfolio-img">
+                            <img src="assets/exaustao industrial.jpg" alt="Sistema de exaustão industrial" class="portfolio-img">
                             <div class="portfolio-overlay">
                                 <div class="overlay-content">
                                     <h3>Sistema de Exaustão Industrial</h3>
                                     <p>Fábrica em São Paulo - 2023</p>
-                                    <button class="view-btn">Ampliar</button>
                                 </div>
                             </div>
                         </div>
@@ -228,12 +244,11 @@
                     <!-- Item 2 -->
                     <div class="portfolio-item" data-category="restaurantes">
                         <div class="portfolio-img-container">
-                            <img src="caminho/para/cozinha-restaurante.jpg" alt="Cozinha industrial para restaurante" class="portfolio-img">
+                            <img src="assets/cozinha industrial.JPG" alt="Cozinha industrial para restaurante" class="portfolio-img">
                             <div class="portfolio-overlay">
                                 <div class="overlay-content">
                                     <h3>Cozinha Industrial Completa</h3>
                                     <p>Restaurante em Florianópolis - 2022</p>
-                                    <button class="view-btn">Ampliar</button>
                                 </div>
                             </div>
                         </div>
@@ -247,7 +262,6 @@
                                 <div class="overlay-content">
                                     <h3>Bancadas Hospitalares</h3>
                                     <p>Hospital em Curitiba - 2023</p>
-                                    <button class="view-btn">Ampliar</button>
                                 </div>
                             </div>
                         </div>
@@ -261,7 +275,6 @@
                                 <div class="overlay-content">
                                     <h3>Balcões Refrigerados</h3>
                                     <p>Supermercado em Belo Horizonte - 2022</p>
-                                    <button class="view-btn">Ampliar</button>
                                 </div>
                             </div>
                         </div>
@@ -275,7 +288,6 @@
                                 <div class="overlay-content">
                                     <h3>Guarda-Corpo Arquitetônico</h3>
                                     <p>Edifício Residencial - Porto Alegre - 2023</p>
-                                    <button class="view-btn">Ampliar</button>
                                 </div>
                             </div>
                         </div>
@@ -289,7 +301,6 @@
                                 <div class="overlay-content">
                                     <h3>Coifa Lavadora Industrial</h3>
                                     <p>Indústria Alimentícia - Joinville - 2023</p>
-                                    <button class="view-btn">Ampliar</button>
                                 </div>
                             </div>
                         </div>
@@ -324,65 +335,97 @@
                     <p class="section-subtitle">A satisfação dos nossos clientes e parceiros é o nosso maior orgulho</p>
                 </div>
         
-                <div class="depoimentos-container">
-                    <!-- Depoimento 1 -->
-                    <div class="depoimento-card">
-                        <div class="depoimento-content">
-                            <div class="quote-icon">“</div>
-                            <p class="depoimento-text">Acácio Metalúrgica é a empresa mais séria que já recebi atendimento, eles dominam no quesito inox e cozinha industrial. Senhor Audi e seu filho Audi Junior são extremamente profissionais, dominam a arte de tornar realidade as necessidades dos clientes.</p>
-                            <div class="depoimento-author">
-                                <div class="author-avatar">
-                                    <img src="caminho/para/avatar1.jpg" alt="Cliente Acácio Metalúrgica">
-                                </div>
-                                <div class="author-info">
-                                    <h4>Roberto Silva</h4>
-                                    <p>Restaurante Maré Alta</p>
-                                </div>
+                <div class="depoimentos-wrapper">
+                    <div class="depoimentos-track">
+                        <!-- Depoimento 1 -->
+                        <div class="depoimento-card">
+                            <div class="depoimento-content">
+                                <div class="quote-icon">“</div>
+                                <p class="depoimento-text">Acácio Metalúrgica é a empresa mais séria que já recebi atendimento, eles dominam no quesito inox e cozinha industrial. Senhor Audi e seu filho Audi Junior são extremamente profissionais, dominam a arte de tornar realidade as necessidades dos clientes.</p>
+                                <!-- <div class="depoimento-author">
+                                    <div class="author-avatar">
+                                        <img src="caminho/para/avatar1.jpg" alt="Cliente Acácio Metalúrgica">
+                                    </div>
+                                    <div class="author-info">
+                                        <h4>Roberto Silva</h4>
+                                        <p>Restaurante Maré Alta</p>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+            
+                        <!-- Depoimento 2 -->
+                        <div class="depoimento-card">
+                            <div class="depoimento-content">
+                                <div class="quote-icon">“</div>
+                                <p class="depoimento-text">Ótima experiência, antes de realizar a venda me passaram bastante conhecimento dos equipamentos e soluções. O acabamento dos produtos superou nossas expectativas.</p>
+                                <!-- <div class="depoimento-author">
+                                    <div class="author-avatar">
+                                        <img src="caminho/para/avatar2.jpg" alt="Cliente Acácio Metalúrgica">
+                                    </div>
+                                    <div class="author-info">
+                                        <h4>Fernanda Oliveira</h4>
+                                        <p>Hospital Santa Clara</p>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+            
+                        <!-- Depoimento 3 -->
+                        <div class="depoimento-card">
+                            <div class="depoimento-content">
+                                <div class="quote-icon">“</div>
+                                <p class="depoimento-text">Eu como empresário e consumidor, a Acácio para nós se tornou indispensável, a espessura do aço é uma das melhores em resistência, é uma das únicas empresas que trabalham em rolo e garantem entrega.</p>
+                                <!-- <div class="depoimento-author">
+                                    <div class="author-avatar">
+                                        <img src="caminho/para/avatar3.jpg" alt="Cliente Acácio Metalúrgica">
+                                    </div>
+                                    <div class="author-info">
+                                        <h4>Carlos Mendonça</h4>
+                                        <p>Supermercados Preço Bom</p>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+
+                        <!-- Depoimento 4 -->
+                        <div class="depoimento-card">
+                            <div class="depoimento-content">
+                                <div class="quote-icon">“</div>
+                                <p class="depoimento-text">Estamos extremamente satisfeitos com os serviços. Equipe ótima e acabamento impecável.</p>
+                                <!-- <div class="depoimento-author">
+                                    <div class="author-avatar">
+                                        <img src="caminho/para/avatar3.jpg" alt="Cliente Acácio Metalúrgica">
+                                    </div>
+                                    <div class="author-info">
+                                        <h4>Carlos Mendonça</h4>
+                                        <p>Supermercados Preço Bom</p>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                        
+                        <!-- Depoimento 5 -->
+                        <div class="depoimento-card">
+                            <div class="depoimento-content">
+                                <div class="quote-icon">“</div>
+                                <p class="depoimento-text">Empresa honesta, que cumpre o que promete. Atendimento e equipamentos
+                                    de qualidade e melhor preço no mercado. Voltaremos a comprar com vocês.</p>
+                                    <!-- <div class="depoimento-author">
+                                    <div class="author-avatar">
+                                        <img src="caminho/para/avatar3.jpg" alt="Cliente Acácio Metalúrgica">
+                                    </div>
+                                    <div class="author-info">
+                                        <h4>Carlos Mendonça</h4>
+                                        <p>Supermercados Preço Bom</p>
+                                    </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
-        
-                    <!-- Depoimento 2 -->
-                    <div class="depoimento-card">
-                        <div class="depoimento-content">
-                            <div class="quote-icon">“</div>
-                            <p class="depoimento-text">Ótima experiência, antes de realizar a venda me passaram bastante conhecimento dos equipamentos e soluções. O acabamento dos produtos superou nossas expectativas.</p>
-                            <div class="depoimento-author">
-                                <div class="author-avatar">
-                                    <img src="caminho/para/avatar2.jpg" alt="Cliente Acácio Metalúrgica">
-                                </div>
-                                <div class="author-info">
-                                    <h4>Fernanda Oliveira</h4>
-                                    <p>Hospital Santa Clara</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-        
-                    <!-- Depoimento 3 -->
-                    <div class="depoimento-card">
-                        <div class="depoimento-content">
-                            <div class="quote-icon">“</div>
-                            <p class="depoimento-text">Eu como empresário e consumidor, a Acácio para nós se tornou indispensável, a espessura do aço é uma das melhores em resistência, é uma das únicas empresas que trabalham em rolo e garantem entrega.</p>
-                            <div class="depoimento-author">
-                                <div class="author-avatar">
-                                    <img src="caminho/para/avatar3.jpg" alt="Cliente Acácio Metalúrgica">
-                                </div>
-                                <div class="author-info">
-                                    <h4>Carlos Mendonça</h4>
-                                    <p>Supermercados Preço Bom</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                
                 </div>
-        
-                <!-- Controles do carrossel (opcional) -->
-                <div class="carrossel-controles">
-                    <button class="carrossel-btn prev-btn">‹</button>
-                    <div class="carrossel-indicadores"></div>
-                    <button class="carrossel-btn next-btn">›</button>
-                </div>
+            </div>
         
                 <!-- Seção de Parceiros -->
                 <div class="parceiros-section">
@@ -433,10 +476,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="carrossel-controles">
+                    <!-- <div class="carrossel-controles">
                         <button class="carrossel-btn prev-btn">‹</button>
                         <button class="carrossel-btn next-btn">›</button>
-                    </div>
+                    </div> -->
                 </div>
 
 
@@ -520,32 +563,36 @@
             </div>
         </section>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-info">
-                <h3>MetalTech Solutions</h3>
-                <p>Rua da Indústria, 1000</p>
-                <p>Distrito Industrial - São Paulo/SP</p>
-                <p>Tel: (11) 4444-5555</p>
+        <footer>
+            <div class="footer-content">
+                <div class="footer-main">
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/acaciometalurgica" target="_blank" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/acaciometalurgica" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/5548996890061" target="_blank" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/acaciometalurgica" target="_blank" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="footer-logo">
+                        <img src="assets/logo.png" alt="Acácio Metalúrgica">
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <p>
+                        <span>&copy; 2024 Acácio Metalúrgica. Todos os direitos reservados.</span>
+                    </p>
+                </div>
             </div>
-            <div class="footer-links">
-                <h3>Links Rápidos</h3>
-                <ul>
-                    <li><a href="sobre.html">Sobre Nós</a></li>
-                    <li><a href="produtos.html">Produtos</a></li>
-                    <li><a href="contato.html">Contato</a></li>
-                </ul>
-            </div>
-            <div class="footer-certificacoes">
-                <h3>Certificações</h3>
-                <img src="images/iso.png" alt="Certificação ISO">
-                <img src="images/abnt.png" alt="Certificação ABNT">
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 MetalTech Solutions. Todos os direitos reservados.</p>
-        </div>
-    </footer>
+        </footer>
 </body>
 <script>
 document.querySelectorAll('nav a').forEach(anchor => {
@@ -588,87 +635,130 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }, 100); // Ajuste o tempo conforme necessário
 });
+// Menu Mobile
+const mobileMenu = document.getElementById('mobile-menu');
+const overlayMenu = document.getElementById('overlay-menu');
+const closeMenu = document.getElementById('close-menu');
+const body = document.body;
 
-document.addEventListener('DOMContentLoaded', function() {
-    const carrossel = document.querySelector('.parceiros-carrossel');
-    const items = document.querySelectorAll('.parceiro-item');
-    const prevBtn = document.querySelector('.prev-btn');
-    const nextBtn = document.querySelector('.next-btn');
+function toggleMenu() {
+    overlayMenu.classList.toggle('active');
+    body.classList.toggle('menu-open');
     
-    const itemWidth = items[0].offsetWidth + 32; // width + gap
-    const visibleItems = 6;
-    let currentPosition = 0;
-    let autoScrollInterval;
-    
-    // Duplica os itens para criar um loop infinito
-    items.forEach(item => {
-        const clone = item.cloneNode(true);
-        carrossel.appendChild(clone);
-    });
-    
-    function updateCarrossel() {
-        carrossel.style.transform = `translateX(-${currentPosition * itemWidth}px)`;
-        
-        // Reset para posição inicial quando chegar ao final
-        if (currentPosition >= items.length) {
+    // Anima os itens do menu sequencialmente
+    const menuItems = document.querySelectorAll('.nav-list-mobile li');
+    if (overlayMenu.classList.contains('active')) {
+        menuItems.forEach((item, index) => {
             setTimeout(() => {
-                carrossel.style.transition = 'none';
-                currentPosition = 0;
-                carrossel.style.transform = `translateX(0)`;
-                setTimeout(() => {
-                    carrossel.style.transition = 'transform 0.6s ease-in-out';
-                }, 50);
-            }, 600);
-        }
+                item.style.opacity = '1';
+                item.style.transform = 'translateY(0)';
+            }, 100 * index);
+        });
+    } else {
+        menuItems.forEach(item => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(20px)';
+        });
     }
-    
-    function nextSlide() {
-        currentPosition++;
-        updateCarrossel();
-    }
-    
-    function prevSlide() {
-        if (currentPosition > 0) {
-            currentPosition--;
-            updateCarrossel();
-        }
-    }
-    
-    // Controles
-    nextBtn.addEventListener('click', () => {
-        clearInterval(autoScrollInterval);
-        nextSlide();
-        startAutoScroll();
-    });
-    
-    prevBtn.addEventListener('click', () => {
-        clearInterval(autoScrollInterval);
-        prevSlide();
-        startAutoScroll();
-    });
-    
-    // Auto scroll
-    function startAutoScroll() {
-        autoScrollInterval = setInterval(nextSlide, 1500);
-    }
-    
-    // Inicia o carrossel automático
-    startAutoScroll();
-    
-    // Pausa ao passar o mouse
-    carrossel.addEventListener('mouseenter', () => {
-        clearInterval(autoScrollInterval);
-    });
-    
-    carrossel.addEventListener('mouseleave', () => {
-        startAutoScroll();
-    });
-    
-    // Ajusta para diferentes tamanhos de tela
-    window.addEventListener('resize', () => {
-        itemWidth = items[0].offsetWidth + 32;
-        updateCarrossel();
+}
+
+mobileMenu.addEventListener('click', toggleMenu);
+closeMenu.addEventListener('click', toggleMenu);
+
+// Fecha o menu ao clicar em um link
+overlayMenu.querySelectorAll('a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        // Fecha o menu
+        toggleMenu();
+        
+        // Rolagem suave após o menu fechar
+        setTimeout(() => {
+            targetElement.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }, 300); // Tempo para o menu fechar
     });
 });
+
+// Menu Desktop - Rolagem suave
+document.querySelectorAll('.nav-list a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    });
+});
+
+// carrossel
+
+document.addEventListener('DOMContentLoaded', function () {
+// === Carrossel de Depoimentos Responsivo ===
+const track = document.querySelector('.depoimentos-track');
+const cards = document.querySelectorAll('.depoimento-card');
+let currentSlide = 0;
+
+function getCardsPerView() {
+  if (window.innerWidth >= 992) return 2;
+  return 1;
+}
+
+function slideDepoimentos() {
+  const cardsPerView = getCardsPerView();
+  currentSlide = (currentSlide + 1) % Math.ceil(cards.length / cardsPerView);
+  const deslocamento = currentSlide * (100 / cardsPerView);
+  track.style.transform = `translateX(-${deslocamento}%)`;
+}
+
+setInterval(slideDepoimentos, 5000);
+
+window.addEventListener('resize', () => {
+  // reinicia o carrossel ao redimensionar para manter layout alinhado
+  currentSlide = 0;
+  track.style.transform = `translateX(0)`;
+});
+
+
+
+  // === Carrossel de Parceiros (loop infinito com duplicação) ===
+  const parceirosContainer = document.querySelector('.parceiros-carrossel');
+  const parceiroItems = document.querySelectorAll('.parceiro-item');
+  let parceiroIndex = 0;
+  let parceiroItemWidth = parceiroItems[0].offsetWidth + 32;
+
+  // Duplicação dos itens
+  parceiroItems.forEach(item => {
+    const clone = item.cloneNode(true);
+    parceirosContainer.appendChild(clone);
+  });
+
+  function rodarParceiros() {
+    parceiroIndex++;
+    parceirosContainer.style.transform = `translateX(-${parceiroIndex * parceiroItemWidth}px)`;
+
+    if (parceiroIndex >= parceiroItems.length) {
+      setTimeout(() => {
+        parceirosContainer.style.transition = 'none';
+        parceiroIndex = 0;
+        parceirosContainer.style.transform = `translateX(0)`;
+        setTimeout(() => {
+          parceirosContainer.style.transition = 'transform 0.6s ease-in-out';
+        }, 50);
+      }, 600);
+    }
+  }
+
+  setInterval(rodarParceiros, 2000); // troca a cada 2 segundos
+});
+
 </script>
 </html> 

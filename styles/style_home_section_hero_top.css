@@ -3,31 +3,83 @@
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/metalurgia-bg.jpg');
   background-size: cover;
   background-position: center;
-  height: 80vh;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: left;
+  justify-content: center;
   text-align: center;
   color: var(--white);
-  margin-top: 60px;
+  padding: 80px 20px 40px; /* Adiciona espaço para o header fixo */
+  position: relative;
 }
 
 .hero-content {
-  margin: 0 200px 0 200px;
-  max-width: 700px;
-  /* border: 1px solid red; */
+  max-width: 1200px;
+  width: 100%;
   padding: 2rem;
   text-align: left;
+  margin: 0 auto;
 }
 
 .hero h1 {
   font-family: 'Montserrat', sans-serif;
-  font-size: 3.5rem;
+  font-size: clamp(2rem, 6vw, 3.5rem); /* Tamanho responsivo */
   margin-bottom: 1rem;
   font-weight: 800;
+  line-height: 1.2;
 }
 
 .hero p {
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 2.5vw, 1.2rem); /* Tamanho responsivo */
   margin-bottom: 2rem;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+.hero .btn {
+  display: inline-block;
+  padding: 12px 30px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Media Queries para ajustes específicos */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 80vh;
+    background-attachment: scroll; /* Remove parallax em mobile */
+    text-align: center;
+    justify-content: center;
+  }
+
+  .hero-content {
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .hero p {
+    max-width: 100%;
+  }
+
+  .hero .btn {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    min-height: 70vh;
+    padding: 60px 15px 30px;
+  }
+
+  .hero h1 {
+    margin-bottom: 0.8rem;
+  }
+
+  .hero p {
+    margin-bottom: 1.5rem;
+  }
 }
