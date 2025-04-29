@@ -1,267 +1,292 @@
+/* === Enhanced Portfolio Section === */
+
 .portfolio-section {
-  padding: 6rem 0;
-  background-color: #fff;
-  position: relative;
+    background-color: var(--white); /* Keep white background */
+    padding: 80px 0;
 }
 
 .portfolio-section .container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 2rem;
+    /* Inherits max-width and padding */
 }
 
-.header-section {
-  text-align: center;
-  margin-bottom: 3rem;
+/* Section Header (Title, Divider, Subtitle) styled globally */
+.portfolio-section .section-subtitle {
+    margin-bottom: 4rem; /* More space before grid */
 }
 
-.section-title {
-  font-size: 2.8rem;
-  color: var(--primary-color);
-  font-weight: 700;
-  margin-bottom: 1rem;
-}
-
-.section-subtitle {
-  font-size: 1.2rem;
-  color: #666;
-  max-width: 700px;
-  margin: 0 auto;
-  line-height: 1.6;
-}
-
+/* Optional Filter Buttons (currently commented out in HTML) */
 .portfolio-filter {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-bottom: 3rem;
+    text-align: center;
+    margin-bottom: 3rem;
 }
 
 .filter-btn {
-  padding: 0.6rem 1.5rem;
-  background: transparent;
-  border: 2px solid var(--primary-color);
-  color: var(--primary-color);
-  border-radius: 30px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
+    background-color: transparent;
+    border: 1px solid var(--medium-gray);
+    color: var(--medium-gray);
+    padding: 8px 20px;
+    margin: 0 5px;
+    border-radius: 20px; /* Pill shape */
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+    font-size: 0.9rem;
+    font-weight: 500;
 }
 
-.filter-btn.active,
-.filter-btn:hover {
-  background: var(--primary-color);
-  color: white;
+.filter-btn:hover,
+.filter-btn.active {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--white);
 }
 
+/* Portfolio Grid */
 .portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 2rem;
-  margin-bottom: 4rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem; /* Gap between items */
 }
 
 .portfolio-item {
-  border-radius: 8px;
-  overflow: hidden;
-  position: relative;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-  aspect-ratio: 4/3;
+    overflow: hidden; /* Ensure overlay stays within bounds */
+    border-radius: var(--border-radius);
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: box-shadow var(--transition-speed) ease;
+    /* Animation class can be added via JS or directly */
+    /* Example: class="animate-on-scroll scroll-scale-up stagger-child" */
 }
 
 .portfolio-item:hover {
-  transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .portfolio-img-container {
-  position: relative;
-  width: 100%;
-  height: 100%;
+    position: relative;
+    overflow: hidden;
 }
 
 .portfolio-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+    display: block;
+    width: 100%;
+    height: 250px; /* Fixed height for consistency */
+    object-fit: cover; /* Cover the area, cropping if needed */
+    transition: transform 0.4s ease;
+}
+
+.portfolio-item:hover .portfolio-img {
+    transform: scale(1.1); /* Zoom effect on hover */
 }
 
 .portfolio-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.7);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  display: flex;
-  align-items: flex-end;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 75, 0, 0.85), rgba(43, 117, 52, 0.1)); /* Gradient overlay */
+    display: flex;
+    align-items: flex-end; /* Align content to bottom */
+    padding: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.4s ease;
 }
 
 .portfolio-item:hover .portfolio-overlay {
-  opacity: 1;
+    opacity: 1;
 }
 
 .overlay-content {
-  padding: 1.5rem;
-  color: white;
-  transform: translateY(20px);
-  transition: transform 0.3s ease;
-  width: 100%;
+    color: var(--white);
+    transform: translateY(20px); /* Start slightly lower */
+    transition: transform 0.4s ease 0.1s; /* Delayed transition */
 }
 
 .portfolio-item:hover .overlay-content {
-  transform: translateY(0);
+    transform: translateY(0);
 }
 
 .overlay-content h3 {
-  font-size: 1.3rem;
-  margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: var(--white);
+    font-weight: 700;
 }
 
 .overlay-content p {
-  font-size: 0.9rem;
-  margin-bottom: 1rem;
-  opacity: 0.9;
+    font-size: 0.9rem;
+    color: var(--light-gray);
+    margin-bottom: 0;
 }
 
-.view-btn {
-  background: var(--primary-color);
-  color: white;
-  border: none;
-  padding: 0.5rem 1.2rem;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: 500;
-  transition: background 0.3s ease;
-}
-
-.view-btn:hover {
-  background: #0056b3;
-}
-
-.portfolio-cta {
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.portfolio-cta p {
-  font-size: 1.1rem;
-  color: #555;
-  margin-bottom: 1.5rem;
-  line-height: 1.6;
-}
-
-.cta-btn {
-  display: inline-block;
-  background: var(--primary-color);
-  color: white;
-  padding: 0.8rem 2rem;
-  border-radius: 4px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-.cta-btn:hover {
-  background: #0056b3;
-  transform: translateY(-2px);
-}
-
-/* Modal */
-.portfolio-modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  z-index: 1000;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
-  box-sizing: border-box;
-}
-
-.modal-content {
-  background: white;
-  max-width: 900px;
-  width: 100%;
-  border-radius: 8px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  max-height: 90vh;
-}
-
-.close-modal {
-  position: absolute;
-  top: 1rem;
-  right: 1.5rem;
-  color: white;
-  font-size: 2rem;
-  cursor: pointer;
-  z-index: 1001;
-}
-
-.modal-img {
-  width: 100%;
-  max-height: 60vh;
-  object-fit: contain;
-}
-
-.modal-info {
-  padding: 1.5rem;
-  background: white;
-}
-
-.modal-title {
-  font-size: 1.5rem;
-  color: #333;
-  margin-bottom: 0.5rem;
-}
-
-.modal-description {
-  color: #666;
-  margin-bottom: 0.5rem;
-}
-
-.modal-location {
-  color: #888;
-  font-style: italic;
-}
-
-/* Responsividade */
+/* Responsive Adjustments */
 @media (max-width: 992px) {
-  .portfolio-grid {
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  }
+    .portfolio-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+    .portfolio-img {
+        height: 220px;
+    }
 }
 
 @media (max-width: 768px) {
-  .section-title {
-      font-size: 2.2rem;
-  }
-  
-  .portfolio-filter {
-      gap: 0.5rem;
-  }
-  
-  .filter-btn {
-      padding: 0.5rem 1rem;
-      font-size: 0.9rem;
-  }
-  
-  .modal-content {
-      flex-direction: column;
-  }
-  
-  .modal-img {
-      max-height: 40vh;
-  }
+    .portfolio-section {
+        padding: 60px 0;
+    }
+    .portfolio-grid {
+        grid-template-columns: 1fr 1fr; /* Two columns on tablet */
+    }
 }
+
+@media (max-width: 576px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr; /* Single column on mobile */
+    }
+    .portfolio-img {
+        height: 200px;
+    }
+    .overlay-content h3 {
+        font-size: 1.2rem;
+    }
+    .filter-btn {
+        padding: 6px 15px;
+        margin: 5px 3px;
+        font-size: 0.85rem;
+    }    
+}
+
+
+
+/* === Portfolio CTA === */
+.portfolio-cta {
+    text-align: center;
+    margin-top: 4rem; /* Space above CTA */
+    padding: 2.5rem;
+    background-color: var(--light-gray);
+    border-radius: var(--border-radius);
+    border-top: 4px solid var(--primary-color);
+}
+
+.portfolio-cta p {
+    font-size: 1.2rem;
+    color: var(--dark-gray);
+    margin-bottom: 1.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.portfolio-cta .cta-btn {
+    /* Use existing btn styles, potentially override if needed */
+    /* Example: Use btn-secondary style */
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    padding: 12px 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all var(--transition-speed) ease;
+}
+
+.portfolio-cta .cta-btn:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 75, 0, 0.2);
+}
+
+/* === Portfolio Modal (Basic Structure) === */
+.portfolio-modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    align-items: center;
+    justify-content: center;
+}
+
+.portfolio-modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background-color: var(--white);
+    margin: auto;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    max-width: 80%;
+    max-height: 80vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    animation: scaleUp 0.3s ease;
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: var(--medium-gray);
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color var(--transition-speed) ease;
+}
+
+.close-modal:hover {
+    color: var(--dark-gray);
+}
+
+.modal-img {
+    max-width: 100%;
+    max-height: 60vh;
+    object-fit: contain;
+    margin-bottom: 1.5rem;
+}
+
+.modal-info {
+    text-align: center;
+}
+
+.modal-title {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.modal-description,
+.modal-location {
+    font-size: 1rem;
+    color: var(--medium-gray);
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 576px) {
+    .portfolio-cta {
+        text-align: center;
+        padding: 1rem 0rem;
+    }
+    .portfolio-cta p{
+        text-align: center;
+        padding: 1rem 1rem;
+    }
+
+    .portfolio-cta .cta-btn {
+        /* Use existing btn styles, potentially override if needed */
+        /* Example: Use btn-secondary style */
+        font-weight: 500;
+        letter-spacing: 0px;
+        white-space: nowrap; /* Prevent text wrapping */
+    }
+    
+    
+}
+

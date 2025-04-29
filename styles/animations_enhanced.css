@@ -1,0 +1,152 @@
+/* === Enhanced Animations === */
+
+/* --- General Purpose Animations --- */
+
+/* Fade In Up (Subtle) */
+@keyframes fadeInUpEnhanced {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade In Down */
+@keyframes fadeInDownEnhanced {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade In Left */
+@keyframes fadeInLeftEnhanced {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Fade In Right */
+@keyframes fadeInRightEnhanced {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Subtle Scale Up */
+@keyframes scaleUp {
+  from {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* --- Animation Classes (to be applied via JS or directly) --- */
+
+/* Base class for elements to be animated on scroll */
+.animate-on-scroll {
+  opacity: 0;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: none !important; /* Override initial transform */
+}
+
+/* Specific animation types for scroll */
+.scroll-fade-up {
+  transform: translateY(50px);
+}
+
+.scroll-fade-left {
+  transform: translateX(-50px);
+}
+
+.scroll-fade-right {
+  transform: translateX(50px);
+}
+
+.scroll-scale-up {
+  transform: scale(0.9);
+}
+
+/* --- Hover Effects --- */
+
+/* Subtle lift and shadow */
+.hover-lift {
+  transition: transform var(--transition-speed, 0.3s) ease, box-shadow var(--transition-speed, 0.3s) ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Background transition for cards/links */
+.hover-bg-transition {
+  transition: background-color var(--transition-speed, 0.3s) ease, color var(--transition-speed, 0.3s) ease;
+}
+
+/* Example: Change background on hover */
+/* .some-element.hover-bg-transition:hover {
+  background-color: var(--light-gray);
+} */
+
+/* --- Specific Element Animations --- */
+
+/* Pulse animation for buttons (can be kept or modified) */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Apply pulse on hover to primary button for emphasis */
+/* .btn-primary:hover {
+  animation: pulse 0.8s infinite ease-in-out;
+} */
+
+/* --- Staggered Animation (requires JS to add classes sequentially) --- */
+.stagger-parent > .stagger-child {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Example delays (add more as needed) */
+.stagger-parent.is-visible > .stagger-child:nth-child(1) { transition-delay: 0.1s; opacity: 1; transform: translateY(0); }
+.stagger-parent.is-visible > .stagger-child:nth-child(2) { transition-delay: 0.2s; opacity: 1; transform: translateY(0); }
+.stagger-parent.is-visible > .stagger-child:nth-child(3) { transition-delay: 0.3s; opacity: 1; transform: translateY(0); }
+.stagger-parent.is-visible > .stagger-child:nth-child(4) { transition-delay: 0.4s; opacity: 1; transform: translateY(0); }
+.stagger-parent.is-visible > .stagger-child:nth-child(5) { transition-delay: 0.5s; opacity: 1; transform: translateY(0); }
+.stagger-parent.is-visible > .stagger-child:nth-child(6) { transition-delay: 0.6s; opacity: 1; transform: translateY(0); }
+
+

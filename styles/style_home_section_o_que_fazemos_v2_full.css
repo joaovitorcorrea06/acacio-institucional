@@ -1,0 +1,147 @@
+/* === Enhanced O Que Fazemos Section (Serviços) === */
+
+.servicos-section {
+    background: linear-gradient(rgba(0, 75, 0, 0.85), rgba(43, 117, 52, 0.75));
+    padding: 80px 0;
+    color: var(--white);
+}
+
+.servicos-section .container {
+    /* Inherits max-width and padding */
+}
+
+/* Section Header uses .section-title-white and .divider-white (styled globally) */
+.servicos-section .section-intro {
+    color: var(--light-gray); /* Lighter text on dark background */
+    margin-bottom: 4rem; /* More space before cards */
+}
+
+.servicos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 2.5rem; /* Gap between cards */
+}
+
+.servico-card {
+    background-color: var(--white);
+    color: var(--text-color);
+    border-radius: var(--border-radius);
+    padding: 2.5rem 2rem; /* Increased padding */
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 5px solid var(--secondary-color); /* Accent border on top */
+    display: flex;
+    flex-direction: column;
+    /* Animation class can be added via JS or directly */
+    /* Example: class="animate-on-scroll scroll-fade-up stagger-child" */
+}
+
+.servico-card:hover {
+    transform: translateY(-8px); /* Lift effect on hover */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card-icon {
+    font-size: 3rem; /* Larger icons */
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    line-height: 1; /* Ensure icon aligns well */
+}
+
+/* Placeholder for actual icons - replace i tags with actual icons/images */
+.card-icon i::before {
+    display: inline-block;
+    /* Add styles for your specific icon font or SVG */
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.card-description {
+    font-size: 0.95rem;
+    color: var(--medium-gray);
+    margin-bottom: 1.5rem;
+    flex-grow: 1; /* Allow description to push footer down */
+    line-height: 1.6;
+}
+
+.card-destaque {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.card-destaque span {
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.card-produtos {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left; /* Align list items left */
+    align-self: flex-start; /* Align list to the start of the flex container */
+    width: 100%; /* Ensure list takes full width */
+}
+
+.card-produtos li {
+    font-size: 0.9rem;
+    color: var(--dark-gray);
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1.5rem; /* Space for icon */
+}
+
+.card-produtos li::before {
+    content: '\2713'; /* Checkmark icon */
+    color: var(--secondary-color);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 1px;
+    font-size: 0.9rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .servicos-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+    }
+    .card-title {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .servicos-section {
+        padding: 60px 0;
+    }
+    .servicos-grid {
+        grid-template-columns: 1fr 1fr; /* Two columns on tablet */
+    }
+}
+
+@media (max-width: 576px) {
+    .servicos-grid {
+        grid-template-columns: 1fr; /* Single column on mobile */
+        gap: 1.5rem;
+    }
+    .servico-card {
+        padding: 2rem 1.5rem;
+    }
+    .card-title {
+        font-size: 1.3rem;
+    }
+    .card-icon {
+        font-size: 2.5rem;
+    }
+}
+

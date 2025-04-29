@@ -1,150 +1,153 @@
-/* Estilos para a seção Quem Somos */
+/* === Enhanced Quem Somos Section === */
+
 .quem-somos {
-  padding: 7rem 0;
-  background-color: var(--white);
-  position: relative;
-  overflow: hidden;
+    background-color: var(--light-gray); /* Use light gray background for contrast */
+    padding: 80px 0; /* Increased padding */
 }
 
 .quem-somos .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
+    /* Inherits max-width and padding from style_enhanced.css */
 }
 
-.header-section {
-  text-align: center;
-  margin-bottom: 2.5rem;
-}
-
-.section-title {
-  font-size: clamp(1.8rem, 5vw, 2.8rem); /* Responsivo com clamp */
-  color: var(--primary-color);
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  margin-bottom: 1rem;
-  position: relative;
-  display: inline-block;
-}
+/* Header Section (Title and Divider) already styled globally */
 
 .content-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 3rem;
-  align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 4rem; /* Increased gap */
+    align-items: center; /* Vertically align items */
+    margin-top: 3rem; /* Space after section header */
 }
 
 .text-content {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  order: 2; /* Muda a ordem para mobile */
+    /* Animation */
+    opacity: 0;
+    transform: translateX(-40px);
+    animation: fadeInLeftEnhanced 0.8s ease 0.2s forwards;
 }
 
-.lead-text {
-  font-size: clamp(1.1rem, 3vw, 1.3rem);
-  line-height: 1.7;
-  color: var(--dark-gray);
-  font-weight: 500;
+.text-content .lead-text {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--secondary-color); /* Use secondary color for lead */
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.text-content p {
+    font-size: 1rem;
+    color: var(--medium-gray);
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
 }
 
 .diferenciais-box {
-  background: linear-gradient(135deg, rgba(240, 240, 240, 0.8) 0%, rgba(255, 255, 255, 0.9) 100%);
-  border-radius: 12px;
-  padding: 1.5rem;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    margin-top: 2.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07); /* Subtle shadow */
+    border-left: 5px solid var(--primary-color); /* Accent border */
 }
 
 .diferenciais-title {
-  font-size: clamp(1.3rem, 3vw, 1.6rem);
-  color: var(--primary-color);
-  margin-bottom: 1.2rem;
-  text-align: center;
-  font-weight: 600;
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
 }
 
 .diferenciais-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.2rem;
+    display: grid;
+    grid-template-columns: 1fr; /* Single column for now, can be 2 columns if needed */
+    gap: 1rem;
 }
 
 .diferencial-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
 }
 
 .diferencial-icon {
-  background-color: var(--primary-color);
-  color: white;
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  flex-shrink: 0;
-  font-size: 0.8rem;
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.2rem;
+    flex-shrink: 0;
 }
 
 .diferencial-text {
-  font-size: clamp(1rem, 2.5vw, 1.1rem);
-  color: var(--dark-gray);
-  line-height: 1.5;
+    font-size: 0.95rem;
+    color: var(--dark-gray);
+}
+
+.image-content {
+    text-align: center;
+    /* Animation */
+    opacity: 0;
+    transform: translateX(40px);
+    animation: fadeInRightEnhanced 0.8s ease 0.2s forwards;
 }
 
 .featured-image {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-  object-fit: cover;
-  max-height: 500px;
-  order: 1; /* Muda a ordem para mobile */
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    width: 100%; /* Garante que a imagem ocupe a largura do contentor */
+    object-fit: cover; /* Cobre a área mantendo a proporção, corta se necessário */
+    display: block; /* Garante que é um elemento de bloco */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-/* Media Queries para telas maiores */
-@media (min-width: 768px) {
-  .quem-somos {
-    padding: 6rem 0;
-  }
-  
-  .content-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-  }
-  
-  .text-content {
-    order: initial; /* Volta à ordem original */
-  }
-  
-  .featured-image {
-    order: initial; /* Volta à ordem original */
-  }
-  
-  .diferenciais-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-  }
+.featured-image:hover {
+    transform: scale(1.03); /* Slight zoom on hover */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
-@media (min-width: 992px) {
-  .quem-somos .container {
-    padding: 0 2rem;
-  }
-  
-  .header-section {
-    margin-bottom: 3rem;
-  }
-  
-  .text-content {
-    gap: 2rem;
-  }
-  
-  .diferenciais-box {
-    padding: 2rem;
-  }
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .content-grid {
+        gap: 2.5rem;
+    }
+    .text-content .lead-text {
+        font-size: 1.1rem;
+    }
+    .diferenciais-title {
+        font-size: 1.3rem;
+    }
 }
+
+@media (max-width: 768px) {
+    .quem-somos {
+        padding: 60px 0;
+    }
+    .content-grid {
+        grid-template-columns: 1fr; /* Stack columns on smaller screens */
+        gap: 3rem;
+    }
+    .image-content {
+        order: -1; /* Move image above text on mobile */
+        margin-bottom: 2rem;
+    }
+    .text-content,
+    .image-content {
+        /* Reset animations for potentially different scroll triggers */
+        opacity: 1;
+        transform: none;
+        animation: none;
+        /* Add scroll animation classes if desired */
+        /* Example: class="animate-on-scroll scroll-fade-up" */
+    }
+}
+
+@media (max-width: 576px) {
+    .diferenciais-box {
+        padding: 1.5rem;
+    }
+    .diferenciais-title {
+        font-size: 1.2rem;
+    }
+    .diferencial-text {
+        font-size: 0.9rem;
+    }
+}
+

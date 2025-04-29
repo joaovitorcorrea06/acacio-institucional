@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Acácio - Excelência em Metalurgia</title>
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="styles/style_animations.css">
-    <link rel="stylesheet" href="styles/style_buttons.css">
+    <link rel="stylesheet" href="styles/style_enhanced.css"> <!-- Enhanced General Styles -->
+    <link rel="stylesheet" href="styles/animations_enhanced.css"> <!-- Enhanced Animations -->
+    <!-- Section Specific Styles (Now Enhanced) -->
     <link rel="stylesheet" href="styles/style_footer.css">
     <link rel="stylesheet" href="styles/style_home_section_hero_top.css">
     <link rel="stylesheet" href="styles/style_home_section_quem_somos.css">
-    <link rel="stylesheet" href="styles/style_home_section_o_que_fazemos.css">
+    <link rel="stylesheet" href="styles/style_home_section_o_que_fazemos_v2_full.css">
     <link rel="stylesheet" href="styles/style_home_section_portfolio.css">
-    <link rel="stylesheet" href="styles/style_home_section_depoimentos.css">
+    <link rel="stylesheet" href="styles/style_home_section_depoimentos_v2_full.css">
     <link rel="stylesheet" href="styles/style_home_section_contato.css">
 
-    <script src="./actions/depoimentos.js"></script>
+    <!-- <script src="./actions/depoimentos.js"></script> -->
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -60,12 +60,12 @@
 
         <section class="hero" id="home">
             <div class="hero-content">
-                <h1>Transformamos o aço em arte</h1>
+                <h1>Soluções em aço inox</h1>
                 <p>Há mais de 30 anos, a ACÁCIO realiza projetos em aço inox com excelência, design e durabilidade, marcando presença nas principal obras do Brasil</p>
                 <a href="https://wa.me/5548996890061" target='_blank' class="btn btn-primary">Conheça Nossos Produtos</a>
             </div>
         </section>
-
+        
         <section class="quem-somos" id="quem_somos">
             <div class="container">
                 <div class="header-section">
@@ -111,8 +111,8 @@
         <section class="servicos-section" id="servicos">
             <div class="container">
                 <div class="header-section">
-                    <h2 class="section-title">O Que Fazemos</h2>
-                    <div class="divider"></div>
+                    <h2 class="section-title-white">O Que Fazemos</h2>
+                    <div class="divider-white"></div>
                     <p class="section-intro">Na Acácio Metalúrgica, oferecemos soluções completas e personalizadas em aço inox, unindo tecnologia, experiência e precisão em cada projeto. Atuamos em diversas frentes, sempre com foco na qualidade, funcionalidade e durabilidade dos produtos.</p>
                 </div>
         
@@ -218,15 +218,6 @@
                     <p class="section-subtitle">Cada obra é única e feita para durar. Veja alguns de nossos projetos de destaque em todo o Brasil.</p>
                 </div>
         
-                <!-- <div class="portfolio-filter">
-                    <button class="filter-btn active" data-filter="all">Todos</button>
-                    <button class="filter-btn" data-filter="exaustao">Exaustão</button>
-                    <button class="filter-btn" data-filter="hospitalar">Hospitalar</button>
-                    <button class="filter-btn" data-filter="restaurantes">Restaurantes</button>
-                    <button class="filter-btn" data-filter="supermercados">Supermercados</button>
-                    <button class="filter-btn" data-filter="construcao">Construção Civil</button>
-                </div> -->
-        
                 <div class="portfolio-grid">
                     <!-- Item 1 -->
                     <div class="portfolio-item" data-category="exaustao">
@@ -257,7 +248,7 @@
                     <!-- Item 3 -->
                     <div class="portfolio-item" data-category="hospitalar">
                         <div class="portfolio-img-container">
-                            <img src="caminho/para/equipamento-hospitalar.jpg" alt="Equipamentos hospitalares em aço inox" class="portfolio-img">
+                            <img src="assets/[ACACIO]-6.png" alt="Equipamentos hospitalares em aço inox" class="portfolio-img">
                             <div class="portfolio-overlay">
                                 <div class="overlay-content">
                                     <h3>Bancadas Hospitalares</h3>
@@ -270,7 +261,7 @@
                     <!-- Item 4 -->
                     <div class="portfolio-item" data-category="supermercados">
                         <div class="portfolio-img-container">
-                            <img src="caminho/para/acougue-supermercado.jpg" alt="Balcões para açougue" class="portfolio-img">
+                            <img src="assets/IMG_20180328_104748556_HDR.jpg" alt="Balcões para açougue" class="portfolio-img">
                             <div class="portfolio-overlay">
                                 <div class="overlay-content">
                                     <h3>Balcões Refrigerados</h3>
@@ -283,7 +274,7 @@
                     <!-- Item 5 -->
                     <div class="portfolio-item" data-category="construcao">
                         <div class="portfolio-img-container">
-                            <img src="caminho/para/guarda-corpo.jpg" alt="Guarda-corpo em aço inox" class="portfolio-img">
+                            <img src="assets/IMG_6064.jpg" alt="Guarda-corpo em aço inox" class="portfolio-img">
                             <div class="portfolio-overlay">
                                 <div class="overlay-content">
                                     <h3>Guarda-Corpo Arquitetônico</h3>
@@ -296,7 +287,7 @@
                     <!-- Item 6 -->
                     <div class="portfolio-item" data-category="exaustao">
                         <div class="portfolio-img-container">
-                            <img src="caminho/para/coifa-lavadora.jpg" alt="Coifa lavadora industrial" class="portfolio-img">
+                            <img src="assets/Metalúrgica Acácio - Escada.JPG" alt="Coifa lavadora industrial" class="portfolio-img">
                             <div class="portfolio-overlay">
                                 <div class="overlay-content">
                                     <h3>Coifa Lavadora Industrial</h3>
@@ -327,12 +318,13 @@
             </div>
         </section>
 
+
         <section class="depoimentos-section" id="depoimentos">
             <div class="container">
                 <div class="header-section">
-                    <h2 class="section-title">Quem Confia, Recomenda</h2>
-                    <div class="divider"></div>
-                    <p class="section-subtitle">A satisfação dos nossos clientes e parceiros é o nosso maior orgulho</p>
+                    <h2 class="section-title-white">Quem Confia, Recomenda</h2>
+                    <div class="divider-white"></div>
+                    <p class="section-subtitle-white">A satisfação dos nossos clientes e parceiros é o nosso maior orgulho</p>
                 </div>
         
                 <div class="depoimentos-wrapper">
@@ -430,6 +422,7 @@
                 <!-- Seção de Parceiros -->
                 <div class="parceiros-section">
                     <h3 class="parceiros-title">Nossos Parceiros</h3>
+                    <div class="divider-white"></div>
                     <div class="parceiros-carrossel-container">
                         <div class="parceiros-carrossel">
                             <div class="parceiro-item">
@@ -595,109 +588,39 @@
         </footer>
 </body>
 <script>
-document.querySelectorAll('nav a').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault(); // Previne o comportamento padrão do link
-
-            const targetId = this.getAttribute('href'); // Obtém o ID do alvo
-            const targetElement = document.querySelector(targetId); // Seleciona o elemento alvo
-
-            // Rolagem suave para o elemento alvo
-            targetElement.scrollIntoView({
-                behavior: 'smooth', // Comportamento suave
-                block: 'start' // Alinha o topo do elemento ao topo da viewport
-        });
-    });
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-    const animatedElements = document.querySelectorAll('.hero, .quem-somos, .servicos-section, .portfolio-section, .depoimentos-section, .contato-section');
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Alterna entre animações à esquerda e à direita
-                const index = Array.from(animatedElements).indexOf(entry.target);
-                if (index % 2 === 0) {
-                    entry.target.classList.add('animate-left'); // Adiciona a animação da esquerda
-                } else {
-                    entry.target.classList.add('animate-right'); // Adiciona a animação da direita
-                }
-                observer.unobserve(entry.target); // Para observar o elemento após a animação
-            }
-        });
-    });
-
-    // Adiciona um pequeno atraso antes de começar a observar
-    setTimeout(() => {
-        animatedElements.forEach(element => {
-            observer.observe(element); // Observa cada elemento
-        });
-    }, 100); // Ajuste o tempo conforme necessário
-});
-// Menu Mobile
-const mobileMenu = document.getElementById('mobile-menu');
-const overlayMenu = document.getElementById('overlay-menu');
-const closeMenu = document.getElementById('close-menu');
-const body = document.body;
-
-function toggleMenu() {
-    overlayMenu.classList.toggle('active');
-    body.classList.toggle('menu-open');
+     //ANIMAÇÃO ENTRADA
+    document.addEventListener('DOMContentLoaded', () => {
+      const sections = document.querySelectorAll('.hero, .quem-somos, .servicos-section, .portfolio-section, .depoimentos-section, .contato-section');
     
-    // Anima os itens do menu sequencialmente
-    const menuItems = document.querySelectorAll('.nav-list-mobile li');
-    if (overlayMenu.classList.contains('active')) {
-        menuItems.forEach((item, index) => {
-            setTimeout(() => {
-                item.style.opacity = '1';
-                item.style.transform = 'translateY(0)';
-            }, 100 * index);
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = Array.from(sections).indexOf(entry.target);
+    
+            if (entry.target.classList.contains('hero')) {
+              entry.target.style.animation = 'fadeInDownEnhanced 1s ease-out forwards';
+            } else {
+              entry.target.style.animation = (index % 2 === 0)
+                ? 'fadeInLeftEnhanced 1s ease-out forwards'
+                : 'fadeInRightEnhanced 1s ease-out forwards';
+            }
+    
+            entry.target.style.opacity = '1'; // <-- FORÇA A OPACITY A 1 QUANDO APARECER
+            entry.target.style.transform = 'none'; // <-- REMOVE O translateY(30px)
+    
+            observer.unobserve(entry.target);
+          }
         });
-    } else {
-        menuItems.forEach(item => {
-            item.style.opacity = '0';
-            item.style.transform = 'translateY(20px)';
-        });
-    }
-}
-
-mobileMenu.addEventListener('click', toggleMenu);
-closeMenu.addEventListener('click', toggleMenu);
-
-// Fecha o menu ao clicar em um link
-overlayMenu.querySelectorAll('a').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        
-        // Fecha o menu
-        toggleMenu();
-        
-        // Rolagem suave após o menu fechar
-        setTimeout(() => {
-            targetElement.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }, 300); // Tempo para o menu fechar
+      }, {
+        threshold: 0.15
+      });
+    
+      sections.forEach(section => {
+        observer.observe(section);
+      });
     });
-});
 
-// Menu Desktop - Rolagem suave
-document.querySelectorAll('.nav-list a').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        
-        targetElement.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-        });
-    });
-});
+    // ANIMAÇÃO DEPOIMENTOS
 
 // carrossel
 
@@ -760,5 +683,85 @@ window.addEventListener('resize', () => {
   setInterval(rodarParceiros, 2000); // troca a cada 2 segundos
 });
 
-</script>
-</html> 
+
+
+
+    // ANIMAÇÃO LOGO CLIENTES
+
+
+
+
+
+    // Menu Mobile
+    const mobileMenu = document.getElementById('mobile-menu');
+    const overlayMenu = document.getElementById('overlay-menu');
+    const closeMenu = document.getElementById('close-menu');
+    const body = document.body;
+
+    function toggleMenu() {
+        overlayMenu.classList.toggle('active');
+        body.classList.toggle('menu-open');
+        
+        // Anima os itens do menu sequencialmente
+        const menuItems = document.querySelectorAll('.nav-list-mobile li');
+        if (overlayMenu.classList.contains('active')) {
+            menuItems.forEach((item, index) => {
+                setTimeout(() => {
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateY(0)';
+                }, 100 * index);
+            });
+        } else {
+            menuItems.forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+            });
+        }
+    }
+
+    mobileMenu.addEventListener('click', toggleMenu);
+    closeMenu.addEventListener('click', toggleMenu);
+
+    // Fecha o menu ao clicar em um link
+    overlayMenu.querySelectorAll('a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            // Fecha o menu
+            toggleMenu();
+            
+            // Rolagem suave após o menu fechar
+            setTimeout(() => {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }, 300); // Tempo para o menu fechar
+        });
+    });
+
+    // ANIMAÇÃO SCROLL
+    document.querySelectorAll('nav a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault(); // Previne o comportamento padrão do link
+
+            const targetId = this.getAttribute('href'); // Obtém o ID do alvo
+            const targetElement = document.querySelector(targetId); // Seleciona o elemento alvo
+
+            // Rolagem suave para o elemento alvo
+            targetElement.scrollIntoView({
+                behavior: 'smooth', // Comportamento suave
+                block: 'start' // Alinha o topo do elemento ao topo da viewport
+            });
+
+        });
+    });
+
+    </script>
+    
+
+</body>
+</html>
+
