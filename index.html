@@ -245,15 +245,7 @@
         
                 <div class="portfolio-grid">
                     <div class="portfolio-item" data-category="exaustao">
-                        <!-- <div class="portfolio-img-container">
-                            <img src="assets/exaustao industrial.jpg" alt="Sistema de exaustão industrial" class="portfolio-img">
-                            <div class="portfolio-overlay">
-                                <div class="overlay-content">
-                                    <h3>Sistema de Exaustão Industrial</h3>
-                                    <p>Fábrica em São Paulo - 2023</p>
-                                </div>
-                            </div>
-                        </div> -->
+
                         <div class="portfolio-img-container">
                             <div class="portfolio-slideshow">
                                 <img src="assets/exaustao/exaustao1.jpg" class="portfolio-slide active">
@@ -265,7 +257,7 @@
                             <div class="portfolio-overlay">
                                 <div class="overlay-content">
                                 <h3>Sistema de Exaustão Industrial</h3>
-                                <!-- <p>Localização - Ano</p> -->
+          
                                 </div>
                             </div>
                         </div>
@@ -273,15 +265,7 @@
                     </div>
         
                     <div class="portfolio-item" data-category="restaurantes">
-                        <!-- <div class="portfolio-img-container">
-                            <img src="assets/cozinha industrial.JPG" alt="Cozinha industrial para restaurante" class="portfolio-img">
-                            <div class="portfolio-overlay">
-                                <div class="overlay-content">
-                                    <h3>Cozinha Industrial Completa</h3>
-                                    <p>Restaurante em Florianópolis - 2022</p>
-                                </div>
-                            </div>
-                        </div> -->
+
                         <div class="portfolio-img-container">
                             <div class="portfolio-slideshow">
                                 <img src="assets/corrimao/Clinica do Aparelho Digestivo 03.jpg" class="portfolio-slide active">
@@ -293,7 +277,7 @@
                             <div class="portfolio-overlay">
                                 <div class="overlay-content">
                                 <h3>Corrimão</h3>
-                                <!-- <p>Localização - Ano</p> -->
+
                                 </div>
                             </div>
                         </div>
@@ -307,7 +291,7 @@
                             <div class="portfolio-overlay">
                                 <div class="overlay-content">
                                 <h3>Construção civil</h3>
-                                <!-- <p>Localização - Ano</p> -->
+
                                 </div>
                             </div>
                         </div>
@@ -321,7 +305,7 @@
                             <div class="portfolio-overlay">
                                 <div class="overlay-content">
                                 <h3>Hospitalar</h3>
-                                <!-- <p>Localização - Ano</p> -->
+
                                 </div>
                             </div>
                         </div>
@@ -340,7 +324,7 @@
                             <div class="portfolio-overlay">
                                 <div class="overlay-content">
                                 <h3>Mercado</h3>
-                                <!-- <p>Localização - Ano</p> -->
+                          
                                 </div>
                             </div>
                         </div>
@@ -358,7 +342,7 @@
                             <div class="portfolio-overlay">
                                 <div class="overlay-content">
                                 <h3>Restaurante</h3>
-                                <!-- <p>Localização - Ano</p> -->
+                       
                                 </div>
                             </div>
                         </div>
@@ -829,34 +813,40 @@ window.addEventListener('resize', () => {
 
 
     //ANIMACAO PORTFOLIO 
-        document.addEventListener('DOMContentLoaded', () => {
-        const slideshows = document.querySelectorAll('.portfolio-slideshow');
+document.addEventListener('DOMContentLoaded', () => {
+    const slideshows = document.querySelectorAll('.portfolio-slideshow');
+    const delays = 2000; // 2 segundos
+    let currentSlideshow = 0;
 
-        slideshows.forEach(slideshow => {
+    function advanceSlideshow(slideshow) {
         const slides = slideshow.querySelectorAll('.portfolio-slide');
-        let current = 0;
-        let interval;
+        const active = slideshow.querySelector('.portfolio-slide.active');
+        let index = Array.from(slides).indexOf(active);
+        slides[index].classList.remove('active');
+        index = (index + 1) % slides.length;
+        slides[index].classList.add('active');
+    }
 
-        function startSlideshow() {
-            interval = setInterval(() => {
-            slides[current].classList.remove('active');
-            current = (current + 1) % slides.length;
-            slides[current].classList.add('active');
-            }, 2000);
-        }
+    function stepThroughSlideshows() {
+        const slideshow = slideshows[currentSlideshow];
+        advanceSlideshow(slideshow);
+        currentSlideshow = (currentSlideshow + 1) % slideshows.length;
+    }
 
-        function stopSlideshow() {
-            clearInterval(interval);
-        }
+    // Inicia o ciclo: a cada 2s avança 1 slideshow
+    const interval = setInterval(stepThroughSlideshows, delays);
 
-        // Inicia
-        startSlideshow();
-
-        // Pausa no hover
-        slideshow.addEventListener('mouseenter', stopSlideshow);
-        slideshow.addEventListener('mouseleave', startSlideshow);
+    // Adiciona pausa no hover individual
+    slideshows.forEach((slideshow, index) => {
+        slideshow.addEventListener('mouseenter', () => {
+            if (index === currentSlideshow) clearInterval(interval);
+        });
+        slideshow.addEventListener('mouseleave', () => {
+            if (index === currentSlideshow) setInterval(stepThroughSlideshows, delays);
         });
     });
+});
+
     </script>
     
 
