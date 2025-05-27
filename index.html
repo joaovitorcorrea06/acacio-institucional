@@ -109,7 +109,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="image-content">
+                    <!-- <div class="image-content">
                         <video 
                         src="assets/motion-acacio.mp4" 
                         class="featured-image" 
@@ -118,7 +118,24 @@
                         muted 
                         playsinline>
                         </video>
+                    </div> -->
+                    <div class="image-content">
+                        <video
+                            class="featured-image"
+                            autoplay
+                            loop
+                            muted
+                            playsinline
+                            preload="auto"
+                        >
+                            <source src="/assets/motion-acacio.webm" type="video/webm" />
+                            <source src="/assets/motion-acacio.mp4" type="video/mp4" />
+                            
+                            <!-- Fallback caso o navegador não suporte vídeo -->
+                            Seu navegador não suporta vídeo HTML5. <a href="/assets/motion-acacio.mp4">Clique aqui para baixar o vídeo</a>.
+                        </video>
                     </div>
+
                 </div>
             </div>
         </section>
@@ -139,13 +156,13 @@
                         </div>
                         <h3 class="card-title">Exaustão</h3>
                         <p class="card-description">Projetamos e fabricamos sistemas de exaustão personalizados, atendendo rigorosamente à NBR 14.518 e às necessidades específicas de cada cliente, com foco em eficiência, durabilidade e segurança. </p>
-                        <!-- <div class="card-destaque">
-                            <span>Foco em:</span> Eficiência • Durabilidade • Segurança
-                        </div> -->
+                        <div class="card-destaque">
+                            <span>Nosso portfólio inclui:</span>
+                        </div>
                         <ul class="card-produtos">
                             <li>Coifa Convencional</li>
                             <li>Coifa Lavadora</li>
-                            <li>Lavador de gases</li>
+                            <li>Lavador de Gases</li>
                             <li>Dutos</li>
                             <li>Ventiladores</li>
                         </ul>
@@ -225,10 +242,10 @@
                         </div>
                         <ul class="card-produtos">
                             <li>Fachadas de inox com vidro</li>
-                            <li>Espaço gourmet</li>
+                            <li>Espaço Gourmet</li>
                             <li>Churrasqueira (coifa, dutos e damper)</li>
-                            <li>Grelhas de piso</li>
-                            <li>Tampas de ferro, entre outros. </li>
+                            <li>Grelhas de Piso</li>
+                            <li>Tampas de ferro </li>
                         </ul>
                     </div>
                 </div>
@@ -546,7 +563,7 @@
                                 </div>
                                 <div class="contato-text">
                                     <h3>E-mail</h3>
-                                    <a href="mailto:contato@acacio.com.br">contato@acacio.com.br</a>
+                                    <a href="mailto:acacio@acacio.com.br">acacio@acacio.com.br</a>
                                 </div>
                             </div>
         
@@ -556,7 +573,10 @@
                                 </div>
                                 <div class="contato-text">
                                     <h3>Telefone</h3>
-                                    <a href="tel:+5548996890061">(48) 9 9689-0061</a>
+                                    <div class="contato-telefones">
+                                        <a href="tel:+5548996890061">(48) 9 9689-0061</a>
+                                        <a href="tel:+554832409333">(48) 3240-9333</a>
+                                    </div>
                                 </div>
                             </div>
         

@@ -154,6 +154,11 @@
     font-family: 'Font Awesome 5 Free';
     font-weight: 900;
   }
+
+  .contato-telefones{
+    display: flex;
+    flex-direction: column;
+  }
   
   /* Responsividade */
   @media (max-width: 992px) {
