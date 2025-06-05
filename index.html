@@ -51,7 +51,7 @@
   <link rel="stylesheet" href="styles/style_home_section_o_que_fazemos_v2_full.css?v=1" />
   <link rel="stylesheet" href="styles/style_home_section_portfolio.css?v=1" />
   <link rel="stylesheet" href="styles/style_home_section_depoimentos_v2_full.css?v=1" />
-  <link rel="stylesheet" href="styles/style_home_section_contato.css?v=1" />
+  <link rel="stylesheet" href="styles/style_home_section_contato.css" />
   
   <!-- Fonts & Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600;800&display=swap" rel="stylesheet" />
@@ -613,7 +613,7 @@
             </div>
         </section>
 
-        <section class="contato-section " id="contato">
+        <!-- <section class="contato-section " id="contato">
             <div class="container">
                 <div class="contato-grid">
                     <div class="contato-info">
@@ -691,7 +691,122 @@
                     </a>
                 </div>
             </div>
-        </section>
+        </section> -->
+
+        <section class="contato-section" id="contato">
+    <div class="container">
+        <div class="contato-grid">
+
+            <!-- FORMULÁRIO DE CONTATO -->
+            <div class="contato-formulario">
+                <h2 class="section-title">Envie sua mensagem</h2>
+                <form id="form-contato">
+                    <div class="form-group">
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefone">Telefone</label>
+                        <input type="tel" id="telefone" name="telefone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mensagem">Mensagem</label>
+                        <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-enviar">Enviar Mensagem</button>
+                </form>
+            </div>
+
+            <!-- DADOS DE CONTATO + MAPA -->
+            <div class="contato-info-mapa">
+                <div class="contato-dados">
+                    <div class="">
+                        <h2 class="section-title">Seu projeto merece a excelência de mais de 30 anos no mercado!</h2>
+                        <div class="divider"></div>
+                    </div>
+
+                    <div class="contato-item">
+                        <div class="contato-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contato-text">
+                            <h3>E-mail</h3>
+                            <a href="mailto:acacio@acacio.com.br">acacio@acacio.com.br</a>
+                        </div>
+                    </div>
+
+                    <div class="contato-item">
+                        <div class="contato-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contato-text">
+                            <h3>Telefone</h3>
+                            <div class="contato-telefones">
+                                <a href="tel:+5548996890061">(48) 9 9689-0061</a>
+                                <a href="tel:+554832409333">(48) 3240-9333</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contato-item">
+                        <div class="contato-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contato-text">
+                            <h3>Endereço</h3>
+                            <address>R. Edelberto de Oliveira, 1004 - Monte Cristo, Florianópolis/SC</address>
+                        </div>
+                    </div>
+
+                    <div class="contato-redes">
+                        <h3>Siga-nos</h3>
+                        <div class="redes-sociais">
+                            <a href="https://www.instagram.com/acaciometalurgica" target="_blank" class="rede-social">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://www.facebook.com/acaciometalurgica" target="_blank" class="rede-social">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://wa.me/5548996890061" target="_blank" class="rede-social">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>
+
+        </div>
+
+        <div class="contato-mapa">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3535.992919041022!2d-48.5465883!3d-27.5926907!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9527383a7c5d5a25%3A0x3a8e8d9e3a8e8d9e!2sR.%20Edelberto%20de%20Oliveira%2C%201004%20-%20Monte%20Cristo%2C%20Florian%C3%B3polis%20-%20SC%2C%2088050-005!5e0!3m2!1spt-BR!2sbr!4v1620000000000!5m2!1spt-BR!2sbr" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy"
+                        title="Localização da Acácio Metalúrgica">
+                    </iframe>
+                </div>
+
+        <div class="contato-cta">
+            <a href="https://wa.me/5548996890061" target='_blank'class="cta-button">
+                <i class="fab fa-whatsapp"></i> Entre em contato via WhatsApp
+            </a>
+        </div>
+    </div>
+</section>
+
 
         <footer>
             <div class="footer-content">
@@ -930,6 +1045,44 @@ document.addEventListener('DOMContentLoaded', () => {
         slideshow.addEventListener('mouseleave', () => {
             if (index === currentSlideshow) setInterval(stepThroughSlideshows, delays);
         });
+    });
+});
+
+
+//form
+
+document.getElementById('form-contato').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const botao = document.querySelector('.btn-enviar');
+    botao.disabled = true;
+    const textoOriginal = botao.textContent;
+    botao.textContent = 'Enviando...';
+
+    const data = {
+        nome: document.getElementById('nome').value,
+        telefone: document.getElementById('telefone').value,
+        email: document.getElementById('email').value,
+        mensagem: document.getElementById('mensagem').value
+    };
+
+    fetch('https://script.google.com/macros/s/AKfycbw_evvjQk_jJLAj7lsE-wiHVb84F4R1gVWf4YNtou1Hij0fzjjhEb3PSDg_60kH_Dk_OA/exec', {
+        method: 'POST',
+        mode: 'no-cors',
+        body: JSON.stringify(data)
+    })
+    .then(() => {
+        botao.textContent = 'Enviado!';
+        setTimeout(() => {
+            botao.textContent = textoOriginal;
+            botao.disabled = false;
+            document.getElementById('form-contato').reset();
+        }, 2000);
+    })
+    .catch(err => {
+        alert("Ocorreu um erro ao enviar: " + err);
+        botao.textContent = textoOriginal;
+        botao.disabled = false;
     });
 });
 
