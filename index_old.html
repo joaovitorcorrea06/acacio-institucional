@@ -721,8 +721,6 @@
                         <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
                     </div>
 
-                    <div class="g-recaptcha" data-sitekey="6LdTZPsrAAAAAElpV4AFeIcL3K1332fSKWsat4Hv"></div>
-
                     <button type="submit" class="btn-enviar">Enviar Mensagem</button>
                 </form>
             </div>
@@ -841,8 +839,6 @@
             </div>
         </footer>
 </body>
-
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script>
      //ANIMAÇÃO ENTRADA
     document.addEventListener('DOMContentLoaded', () => {
@@ -1054,6 +1050,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 //form
+
 document.getElementById('form-contato').addEventListener('submit', function(e) {
     e.preventDefault();
 
@@ -1062,21 +1059,11 @@ document.getElementById('form-contato').addEventListener('submit', function(e) {
     const textoOriginal = botao.textContent;
     botao.textContent = 'Enviando...';
 
-    // ✅ Verifica se o reCAPTCHA foi resolvido
-    const token = grecaptcha.getResponse();
-    if (!token) {
-        alert("Por favor, confirme que você não é um robô.");
-        botao.textContent = textoOriginal;
-        botao.disabled = false;
-        return;
-    }
-
     const data = {
         nome: document.getElementById('nome').value,
         telefone: document.getElementById('telefone').value,
         email: document.getElementById('email').value,
-        mensagem: document.getElementById('mensagem').value,
-        "g-recaptcha-response": token // envia o token junto (opcional)
+        mensagem: document.getElementById('mensagem').value
     };
 
     fetch('https://script.google.com/macros/s/AKfycbw_evvjQk_jJLAj7lsE-wiHVb84F4R1gVWf4YNtou1Hij0fzjjhEb3PSDg_60kH_Dk_OA/exec', {
@@ -1086,7 +1073,6 @@ document.getElementById('form-contato').addEventListener('submit', function(e) {
     })
     .then(() => {
         botao.textContent = 'Enviado!';
-        grecaptcha.reset(); // ✅ reseta o reCAPTCHA
         setTimeout(() => {
             botao.textContent = textoOriginal;
             botao.disabled = false;
@@ -1099,7 +1085,6 @@ document.getElementById('form-contato').addEventListener('submit', function(e) {
         botao.disabled = false;
     });
 });
-
 
     </script>
     
